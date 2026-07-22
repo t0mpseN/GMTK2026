@@ -77,5 +77,6 @@ crashlytics-build.properties
 # Obsidian
 .obsidian/
 .obsidian/workspace.json
-/.obsidian
+
+# Visual Studio Code
 .vsconfig
