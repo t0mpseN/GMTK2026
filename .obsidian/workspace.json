@@ -164,8 +164,19 @@
               "icon": "lucide-list",
               "title": "Outline of README"
             }
+          },
+          {
+            "id": "edc43b0c714c6cf0",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -186,17 +197,32 @@
   },
   "active": "71bddfc7ca56626c",
   "lastOpenFiles": [
-    "Library/Artifacts/92/920dc1e758143c1ecd464c545cca15ed",
-    "Library/Artifacts/18/188255e3a295d336e2782ad0a8c4e13d",
-    "Assets/Scripts/World.meta",
-    "Temp/ADB-Refreshe3c095d5910c6ec43981d414b8d7518a",
-    "Assets/Scripts/World",
-    "Library/Artifacts/07/07e88e16dc8716f174ee8a75680c1a1a",
-    "Assets/Scripts/Camera.meta",
-    "Temp/ADB-Refresh2fcf61c9b8ea88b4296c46d49309ae3b",
-    "Assets/Scripts/Camera",
-    "Temp/ADB-Refresh506b82905f976ba46a8c4c5e6bd9e257",
-    "Library/Artifacts/d1/d1286757a1c3694e6c6a06d6fc7081e7",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Tests/Editor/Unity.Settings.Editor.Tests.asmdef",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Tests/Editor/TestProjectUserSettings.cs.meta",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Tests/Editor/TestProjectUserSettings.cs",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Tests/Editor/Unity.Settings.Editor.Tests.asmdef.meta",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Tests/Editor/SettingsTests.cs.meta",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Tests/Editor/MultipleProjectSettings.cs.meta",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Tests/Editor/SettingsTestBase.cs",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Tests/Editor/SettingsTestBase.cs.meta",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Tests/Editor/SettingsTests.cs",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Tests/Editor/FileRepositoryTests.cs.meta",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Samples~/PackageWithProjectAndUserSettings/SettingsExamples.cs",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Documentation~/images/settings.gif",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Documentation~/settings-manager.md",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/Content/Options.png",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/README.md",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/LICENSE.md",
+    "Library/PackageCache/com.unity.settings-manager@0b8638c5ce86/CHANGELOG.md",
+    "Library/PackageCache/com.unity.ide.visualstudio@dc1ddd4f09b6/Documentation~/Images/vs-external-tools.png",
+    "Library/PackageCache/com.unity.ide.visualstudio@dc1ddd4f09b6/Documentation~/README.md",
+    "Library/PackageCache/com.unity.ide.visualstudio@dc1ddd4f09b6/Documentation~/TableOfContents.md",
+    "Library/PackageCache/com.unity.ide.visualstudio@dc1ddd4f09b6/Documentation~/index.md",
+    "Library/PackageCache/com.unity.ide.visualstudio@dc1ddd4f09b6/Documentation~/using-visual-studio-editor.md",
+    "Library/PackageCache/com.unity.ide.visualstudio@dc1ddd4f09b6/ThirdPartyNotices.md",
+    "Library/PackageCache/com.unity.ide.visualstudio@dc1ddd4f09b6/LICENSE.md",
+    "Library/PackageCache/com.unity.ide.visualstudio@dc1ddd4f09b6/CONTRIBUTING.md",
+    "Library/PackageCache/com.unity.ide.visualstudio@dc1ddd4f09b6/CHANGELOG.md",
     "Library/PackageCache/com.unity.timeline@8cd8509afae5/Samples~/Customization/Annotation/Editor/Resources/light/timeline_annotation_selected.png",
     "Library/PackageCache/com.unity.timeline@8cd8509afae5/Samples~/Customization/Annotation/Editor/Resources/light/timeline_annotation_collapsed.png",
     "Library/PackageCache/com.unity.timeline@8cd8509afae5/Samples~/Customization/Annotation/Editor/Resources/light/timeline_annotation.png",
@@ -204,9 +230,6 @@
     "Library/PackageCache/com.unity.timeline@8cd8509afae5/Samples~/Customization/Annotation/Editor/Resources/dark/timeline_annotation_collapsed.png",
     "Library/PackageCache/com.unity.timeline@8cd8509afae5/Samples~/Customization/Annotation/Editor/Resources/dark/timeline_annotation.png",
     "Library/PackageCache/com.unity.shadergraph@636559dc59a3/Samples~/ProductionReady/Environment/Details/Ferns/Textures/Fern_Thickness.png",
-    "Library/PackageCache/com.unity.shadergraph@636559dc59a3/Samples~/ProductionReady/Environment/Details/Ferns/Textures/Fern_Normal.png",
-    "Library/PackageCache/com.unity.shadergraph@636559dc59a3/Samples~/ProductionReady/Environment/Details/Ferns/Textures/Fern_MaskMap.png",
-    "Library/PackageCache/com.unity.shadergraph@636559dc59a3/Samples~/ProductionReady/Environment/Details/Ferns/Textures/Fern_BaseColor.png",
     "Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/input-manager/nodes-note-manual.md",
     "Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/input-manager/nodes-input-output-trigger.md",
     "Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/input-manager/nodes-desc-end.md",
@@ -219,18 +242,6 @@
     "Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/input-system/nodes-input-action-change.md",
     "Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/custom-events/vs-right-click-project.md",
     "Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/custom-events/vs-tasks-note-end.md",
-    "Library/PackageCache/com.unity.shadergraph@636559dc59a3/Documentation~/snippets/sample-nodes/nodes-sample-rgba-output-table.md",
-    "Library/PackageCache/com.unity.shadergraph@636559dc59a3/Documentation~/snippets/sample-nodes/nodes-sample-mip-bias-sample-mode-table.md",
-    "Library/PackageCache/com.unity.shadergraph@636559dc59a3/Documentation~/snippets/sample-nodes/nodes-sample-mip-mode-table.md",
-    "Library/PackageCache/com.unity.shadergraph@636559dc59a3/Documentation~/snippets/sample-nodes/nodes-sample-errors.md",
-    "Library/PackageCache/com.unity.shadergraph@636559dc59a3/Documentation~/snippets/sample-nodes/nodes-sample-fragment-lod.md",
-    "Library/PackageCache/com.unity.2d.psdimporter@5d82044f9e43/Samples~/PSDImporterSamples/PSDImporterCustomPacker/README.md",
-    "Library/PackageCache/com.unity.ugui@f2d87ebaaa32/Documentation~/TextMeshPro/TMPObjectUIText.md",
-    "Library/PackageCache/com.unity.ugui@f2d87ebaaa32/Documentation~/TextMeshPro/TMPObjects.md",
-    "Library/PackageCache/com.unity.ugui@f2d87ebaaa32/Documentation~/TextMeshPro/TMPObject3DText.md",
-    "Library/PackageCache/com.unity.ugui@f2d87ebaaa32/Documentation~/TextMeshPro/TextMeshPro.md",
-    "Library/PackageCache/com.unity.ugui@f2d87ebaaa32/Documentation~/TextMeshPro/StyleSheets.md",
-    "Library/PackageCache/com.unity.ugui@f2d87ebaaa32/Documentation~/TextMeshPro/Sprites.md",
-    "Library/PackageCache/com.unity.ugui@f2d87ebaaa32/Documentation~/TextMeshPro/ShadersDistanceFieldSurfaceMobile.md"
+    "Library/PackageCache/com.unity.shadergraph@636559dc59a3/Documentation~/snippets/sample-nodes/nodes-sample-rgba-output-table.md"
   ]
 }
