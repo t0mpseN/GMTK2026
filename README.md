@@ -2,9 +2,9 @@
 
 ## 22/07 - Wednesday
 - [x] Setup source control
-- [ ] Initialize Unity 2D Project
-- [ ] Implement basic character movement
-- [ ] Setup character-centered camera
+- [x] Initialize Unity 2D Project
+- [x] Implement basic character movement
+- [x] Setup character-centered camera
 - [ ] Implement basic obstacles/enemies objects
 
 ## 23/07 - Thursday
