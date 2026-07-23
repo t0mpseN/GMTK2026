@@ -1,4 +1,4 @@
-# GMTK2026 - DEVLOG
+# GMTK2026 - BACKLOG
 
 ## 22/07 - Wednesday
 - [x] Setup source control
@@ -6,6 +6,7 @@
 - [x] Implement basic character movement
 - [x] Setup character-centered camera
 - [ ] Implement basic obstacles/enemies objects
+- [ ] Add melee "combat"
 - [ ] Add timer and reset
 - [ ] Add progression persistency
 
