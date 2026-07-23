@@ -13,11 +13,11 @@
 
 ## 23/07 - Thursday
 - [ ] Add spawner
-- [ ] Add buffs
 - [ ] Add upgrades
 - [ ] Improve currency and economy management
 - [ ] Start implementing skills and power-ups
 - [ ] Start looking for gfx and UI elements
+- [ ] Add buffs (if any)
 
 ## 24/07 - Friday
 - [ ] Polish hitboxes and mechanics
