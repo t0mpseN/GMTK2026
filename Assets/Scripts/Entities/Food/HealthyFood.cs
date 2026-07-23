@@ -18,4 +18,11 @@ public class HealthyFood : Food
 
         return -DirectionToTarget();
     }
+
+    protected override void OnDeath()
+    {
+        GameTimer.Instance.AddTime(BonusTime);
+        GameData.Instance.AddCurrency(Currency);
+        Destroy(gameObject);
+    }
 }
