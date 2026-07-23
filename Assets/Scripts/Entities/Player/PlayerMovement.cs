@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private PlayerControls _controls;
     private InputAction _moveAction;
     private Vector2 _input;
-    [SerializeField] private float _movementSpeed = 5f;
-    public float MovementSpeed => _movementSpeed;
+    [SerializeField] private float _moveSpeed = 5f;
+    public float MoveSpeed => _moveSpeed;
 
     // METHODS
     private void Awake()
@@ -42,6 +42,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidBody.MovePosition(_rigidBody.position + _input * _movementSpeed * Time.fixedDeltaTime);
+        _rigidBody.MovePosition(_rigidBody.position + _input * _moveSpeed * Time.fixedDeltaTime);
     }
 }
