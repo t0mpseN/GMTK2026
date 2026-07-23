@@ -12,7 +12,8 @@
 - [x] Add progression persistency
 
 ## 23/07 - Thursday
-- [ ] Add spawner
+- [x] Add spawner
+- [x] Add menu
 - [ ] Add upgrades
 - [ ] Improve currency and economy management
 - [ ] Start implementing skills and power-ups
