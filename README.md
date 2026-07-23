@@ -6,6 +6,8 @@
 - [x] Implement basic character movement
 - [x] Setup character-centered camera
 - [ ] Implement basic obstacles/enemies objects
+- [ ] Add timer and reset
+- [ ] Add progression persistency
 
 ## 23/07 - Thursday
 - [ ] Implement currency and economy management
