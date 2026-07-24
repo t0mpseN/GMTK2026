@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -6,7 +5,7 @@ using UnityEngine;
 public class TimerDisplay : MonoBehaviour
 {
     [SerializeField] private Color _warningColor = Color.red;
-    [SerializeField] private float _warningThreshold = 10f;
+    private float _warningThreshold => ConfigRegistry.Instance.Run.WarningThreshold;
 
     private TextMeshProUGUI _label;
     private Color _normalColor;

@@ -2,24 +2,25 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class WeaponHitBox : MonoBehaviour
 {
     // FIELDS & PROPERTIES
-    [Header("Attack")]
-    [SerializeField] private float _attackDuration = 0.5f;
-    [SerializeField] private float _attackCooldown = 1f;
+    private WeaponConfig _config;
+    private WeaponConfig Config => _config != null ? _config : _config = ConfigRegistry.Instance.Weapon;
 
-    [Header("Visuals")]
-    [SerializeField] private float _attackScaleY = 3f;
-    [SerializeField] private Color _attackColor = Color.red;
+    protected virtual int AttackDamage => Config.BaseDamage + UpgradeSystem.Instance.GetValue(UpgradeId.AttackDamage);
+    protected virtual float AttackDuration => Config.BaseAttackDuration;
+    protected virtual float AttackCooldown => Config.BaseAttackCooldown;
+    protected virtual float AttackScaleY => Config.BaseAttackScaleY + UpgradeSystem.Instance.GetValue(UpgradeId.AttackRange);
 
-    private Collider2D _collider;
+    private BoxCollider2D _collider;
     private SpriteRenderer _spriteRenderer;
     private PlayerControls _playerControls;
     private InputAction _attackAction;
 
+    [SerializeField] private Color _attackColor = Color.red;
     private Color _idleColor;
     private Vector3 _idleScale;
     private float _lastAttackTime = float.NegativeInfinity;
@@ -30,7 +31,7 @@ public class WeaponHitBox : MonoBehaviour
     // METHODS
     private void Awake()
     {
-        _collider = GetComponent<Collider2D>();
+        _collider = GetComponent<BoxCollider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _idleColor = _spriteRenderer.color;
         _idleScale = transform.localScale;
@@ -61,7 +62,7 @@ public class WeaponHitBox : MonoBehaviour
         if (_isAttacking)
             return;
 
-        if (Time.time - _lastAttackTime < _attackCooldown)
+        if (Time.time - _lastAttackTime < AttackCooldown)
             return;
 
         StartCoroutine(PerformAttack());
@@ -74,9 +75,9 @@ public class WeaponHitBox : MonoBehaviour
 
         // Change visuals for attack
         _spriteRenderer.color = _attackColor;
-        transform.localScale = new Vector3(_idleScale.x, _idleScale.y * _attackScaleY, _idleScale.z);
+        transform.localScale = new Vector3(_idleScale.x, _idleScale.y * AttackScaleY, _idleScale.z);
         _collider.enabled = true;
-        yield return new WaitForSeconds(_attackDuration);
+        yield return new WaitForSeconds(AttackDuration);
 
         // Reset visuals after attack
         _collider.enabled = false;
@@ -94,7 +95,7 @@ public class WeaponHitBox : MonoBehaviour
         if (food == null)
             return;
 
-        food.OnHitByWeapon();
+        food.OnHitByWeapon(AttackDamage);
         // TODO: Add visual feedback for the food being hit by the weapon (e.g., play an animation, change color, etc.)
     }
 }

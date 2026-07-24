@@ -14,11 +14,12 @@
 ## 23/07 - Thursday
 - [x] Add spawner
 - [x] Add menu
-- [ ] Add upgrades
+- [x] Add upgrades
 - [ ] Improve currency and economy management
 - [ ] Start implementing skills and power-ups
 - [ ] Start looking for gfx and UI elements
 - [ ] Add buffs (if any)
+- [ ] Apply move spd changes by weight?
 
 ## 24/07 - Friday
 - [ ] Polish hitboxes and mechanics

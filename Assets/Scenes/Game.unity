@@ -331,8 +331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8280e8420579d764d8e13a796a1daf35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameTimer
-  _startingTime: 60
-  _maxtime: 60
 --- !u!4 &309415099
 Transform:
   m_ObjectHideFlags: 0
@@ -378,7 +376,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5148071}
-  - {fileID: 1257849788}
   - {fileID: 309415099}
   - {fileID: 1361121811}
   m_Father: {fileID: 0}
@@ -1126,7 +1123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerDisplay
   _warningColor: {r: 1, g: 0, b: 0, a: 1}
-  _warningThreshold: 10
 --- !u!1 &1179603006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,9 +1303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8dbc5704ff445048b3dff0862600318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponCollisionBox
-  _attackDuration: 0.1
-  _attackCooldown: 0.5
-  _attackScaleY: 5
   _attackColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1257849786
 GameObject:
@@ -1353,7 +1346,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 331117889}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1361121810
 GameObject:
@@ -1796,3 +1789,4 @@ SceneRoots:
   - {fileID: 331117889}
   - {fileID: 1984175222}
   - {fileID: 92194559}
+  - {fileID: 1257849788}

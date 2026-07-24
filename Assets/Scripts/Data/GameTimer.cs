@@ -5,8 +5,7 @@ public class GameTimer : MonoBehaviour
 {
     // FIELDS & PROPERTIES
     public static GameTimer Instance { get; private set; }
-    [SerializeField] private float _startingTime = 60f;
-    [SerializeField] private float _maxtime = 999f;
+    protected virtual float StartingTime => ConfigRegistry.Instance.Run.StartingTime + UpgradeSystem.Instance.GetValue(UpgradeId.TimePerRun);
 
     public float TimeRemaining { get; private set; }
     public bool IsRunning { get; private set; }
@@ -25,7 +24,7 @@ public class GameTimer : MonoBehaviour
         }
 
         Instance = this;
-        TimeRemaining = _startingTime;
+        TimeRemaining = StartingTime;
     }
 
     private void Start()
@@ -57,7 +56,7 @@ public class GameTimer : MonoBehaviour
         if (seconds <= 0f)
             return;
 
-        TimeRemaining = Mathf.Min(TimeRemaining + seconds, _maxtime);
+        TimeRemaining = Mathf.Min(TimeRemaining + seconds, StartingTime);
         OnTimeChanged?.Invoke(TimeRemaining);
     }
 }

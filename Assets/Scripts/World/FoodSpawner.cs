@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,16 +6,7 @@ public class FoodSpawner : MonoBehaviour
     // FIELDS & PROPERTIES
     [SerializeField] private SpawnEntry[] _spawnEntries;
     [SerializeField] private Transform _player;
-
-    [Header("Spawn Area")]
-    [Tooltip("Margin from the edges of the screen where food will not spawn. This prevents food from spawning too close to the edges.")]
-    [Range(0f, 0.4f)] [SerializeField] private float _spawnAreaPadding = 0.1f;
-
-    [Tooltip("Radius where mobs can't spawn around the player.")]
-    [SerializeField] private float _minDistanceFromPlayer = 3f;
-
-    [SerializeField] private int _maxPlacementAttempts = 15;
-
+    private SpawnConfig Config => ConfigRegistry.Instance.Spawn;
     private Camera _camera;
 
 
@@ -42,8 +32,14 @@ public class FoodSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(entry.SpawnInterval);
+
             entry.Alive.RemoveAll(food => food == null); // Clean up dead references
-            if (entry.Alive.Count >= entry.MaxAliveCount)
+
+            int maxAliveCount = entry.MaxAliveCount;
+            if (entry.Prefab is HealthyFood)
+                maxAliveCount += Mathf.RoundToInt(UpgradeSystem.Instance.GetValue(UpgradeId.MaxHealthyFoodIncrease));
+
+            if (entry.Alive.Count >= maxAliveCount)
                 continue;
 
             if (TryGetSpawnPosition(out Vector2 position))
@@ -60,18 +56,18 @@ public class FoodSpawner : MonoBehaviour
         if (_camera == null)
             return false;
 
-        float halfHeight = _camera.orthographicSize * (1f - _spawnAreaPadding);
+        float halfHeight = _camera.orthographicSize * (1f - Config.SpawnAreaPadding);
         float halfWidth = halfHeight * _camera.aspect;
         Vector2 center = _camera.transform.position;
 
-        for (int attempt = 0 ; attempt < _maxPlacementAttempts; attempt++)
+        for (int attempt = 0 ; attempt < Config.MaxPlacementAttempts; attempt++)
         {
             Vector2 candidate = center + new Vector2(
                 UnityEngine.Random.Range(-halfWidth, halfWidth),
                 UnityEngine.Random.Range(-halfHeight, halfHeight));
 
             if (_player != null &&
-                Vector2.Distance(candidate, _player.position) < _minDistanceFromPlayer)
+                Vector2.Distance(candidate, _player.position) < Config.MinDistanceFromPlayer)
                 continue;
 
             position = candidate;

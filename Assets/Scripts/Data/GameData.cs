@@ -13,6 +13,16 @@ public class GameData : MonoBehaviour
 
 
     // METHODS
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Bootstrap()
+    {
+        if (Instance != null) 
+            return;
+
+        GameObject gameObject = new GameObject(nameof(GameData));
+        gameObject.AddComponent<GameData>();
+    }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -22,6 +32,7 @@ public class GameData : MonoBehaviour
         }
 
         Instance = this;
+        transform.SetParent(null); // guarantees that this object is not a child of any other object (no warnings about DontDestroyOnLoad)
         DontDestroyOnLoad(gameObject);
         Data = SaveSystem.Load();
     }

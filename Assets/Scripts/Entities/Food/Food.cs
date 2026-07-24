@@ -10,11 +10,8 @@ public abstract class Food : MonoBehaviour
     [SerializeField] protected float _moveSpeed = 3f;
     public float MoveSpeed => _moveSpeed;
 
-    [SerializeField] protected int _currencyOnDeath = 1;
-    public int Currency => _currencyOnDeath;
-
-    [SerializeField] protected float _timeBonusOnDeath = 2f;
-    public float BonusTime => _timeBonusOnDeath;
+    protected abstract int CurrencyReward { get; }
+    protected abstract float TimeReward { get; }
 
     protected Rigidbody2D _rigidBody;
     protected Transform _target;
@@ -54,9 +51,9 @@ public abstract class Food : MonoBehaviour
         return DirectionToTarget();
     }
 
-    public virtual void OnHitByWeapon()
+    public virtual void OnHitByWeapon(int damage)
     {
-        _health--;
+        _health = _health - damage;
 
         if (_health <= 0)
             OnDeath();
@@ -64,7 +61,7 @@ public abstract class Food : MonoBehaviour
     
     protected virtual void OnDeath()
     {
-        GameTimer.Instance?.AddTime(_timeBonusOnDeath);
+        GameTimer.Instance?.AddTime(TimeReward);
         Destroy(gameObject);
     }
 }
