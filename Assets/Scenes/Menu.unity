@@ -937,6 +937,7 @@ MonoBehaviour:
   _economy: {fileID: 11400000, guid: 96c0306c8d2fe25469c8f64a0e8b35f9, type: 2}
   _weapon: {fileID: 11400000, guid: 749279c4bdbc751498f65e479bec3e05, type: 2}
   _run: {fileID: 11400000, guid: ee12458e6701f4e48aa295dfde27581a, type: 2}
+  _spawn: {fileID: 11400000, guid: e7e3247663aa3a841b2a40e2c87386dc, type: 2}
 --- !u!4 &2006773575
 Transform:
   m_ObjectHideFlags: 0
