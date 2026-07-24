@@ -15,14 +15,19 @@
 - [x] Add spawner
 - [x] Add menu
 - [x] Add upgrades
-- [ ] Improve currency and economy management
-- [ ] Start implementing skills and power-ups
-- [ ] Start looking for gfx and UI elements
-- [ ] Add buffs (if any)
-- [ ] Apply move spd changes by weight?
 
 ## 24/07 - Friday
+- [x] Add player sprite
+- [x] Add sprite flipping by mouse position
+- [x] Add player walking animation
+- [ ] Add custom cursor/crosshair
 - [ ] Polish hitboxes and mechanics
+- [ ] Start skill tree
+- [ ] Add move spd upgrade
+- [ ] Start implementing skills and power-ups
+- [ ] Improve currency and economy management
+- [ ] Start looking for gfx and UI elements
+- [ ] Add buffs (if any)
 - [ ] Finish implementing skills and power-ups
 - [ ] Implement actual visual elements
 

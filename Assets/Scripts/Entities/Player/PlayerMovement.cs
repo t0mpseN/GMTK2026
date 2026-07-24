@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _input;
     [SerializeField] private float _moveSpeed = 5f;
     public float MoveSpeed => _moveSpeed;
+    public bool IsMoving => _input.sqrMagnitude > 0.01f;
 
     // METHODS
     private void Awake()
