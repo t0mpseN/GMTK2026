@@ -24,7 +24,7 @@
 - [x] Polish hitboxes and mechanics
 - [x] Add custom font
 - [x] Improve currency display 
-- [ ] Add countdown timer bar (satiationmeter)
+- [ ] Add countdown timer bar 
 - [ ] Add grass tiles to background
 - [ ] Add donut enemy sprites
 - [ ] Add weight during runs (move spd based on it)
