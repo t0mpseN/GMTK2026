@@ -24,7 +24,7 @@
 - [x] Polish hitboxes and mechanics
 - [x] Add custom font
 - [x] Improve currency display 
-- [ ] Add countdown timer bar 
+- [x] Add countdown timer bar 
 - [ ] Add grass tiles to background
 - [ ] Add donut enemy sprites
 - [ ] Add weight during runs (move spd based on it)
@@ -36,6 +36,7 @@
 - [ ] Add skills/buffs (if any)
 - [ ] Implement actual visual elements
 - [ ] Add more food types
+- [ ] Add hit feedback (small knockback + white blink)
 
 ## 25/07 - Saturday
 - [ ] Polish visuals
