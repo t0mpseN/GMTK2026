@@ -1,43 +1,40 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(BoxCollider2D))]
-[RequireComponent(typeof(SpriteRenderer))]
 public class WeaponHitBox : MonoBehaviour
 {
     // FIELDS & PROPERTIES
-    private WeaponConfig _config;
-    private WeaponConfig Config => _config != null ? _config : _config = ConfigRegistry.Instance.Weapon;
-
-    protected virtual int AttackDamage => Config.BaseDamage + UpgradeSystem.Instance.GetValue(UpgradeId.AttackDamage);
-    protected virtual float AttackDuration => Config.BaseAttackDuration;
-    protected virtual float AttackCooldown => Config.BaseAttackCooldown;
-    protected virtual float AttackScaleY => Config.BaseAttackScaleY + UpgradeSystem.Instance.GetValue(UpgradeId.AttackRange);
-
-    private BoxCollider2D _collider;
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField] private LayerMask _foodLayers;
+    [SerializeField] private SpriteRenderer _weaponRenderer;
+    [SerializeField] private Color _attackColor = Color.red;
     private PlayerControls _playerControls;
     private InputAction _attackAction;
-
-    [SerializeField] private Color _attackColor = Color.red;
     private Color _idleColor;
-    private Vector3 _idleScale;
     private float _lastAttackTime = float.NegativeInfinity;
+
+    private WeaponConfig _config;
+    private WeaponConfig Config => _config != null ? _config : _config = ConfigRegistry.Instance.Weapon;
 
     private bool _isAttacking;
     public bool IsAttacking => _isAttacking;
 
+    private float RangeScale => 1f + UpgradeSystem.Instance.GetValue(UpgradeId.AttackRange);
+    private float ForwardRadius => Config.BaseForwardRadius * RangeScale;
+    private float LateralRadius => Config.BaseLateralRadius * RangeScale;
+    protected virtual int AttackDamage => Config.BaseDamage + UpgradeSystem.Instance.GetValue(UpgradeId.AttackDamage);
+    protected virtual float AttackDuration => Config.BaseAttackDuration;
+    protected virtual float AttackCooldown => Config.BaseAttackCooldown;
+
     // METHODS
     private void Awake()
     {
-        _collider = GetComponent<BoxCollider2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _idleColor = _spriteRenderer.color;
-        _idleScale = transform.localScale;
+        if (_weaponRenderer != null)
+            _idleColor = _weaponRenderer.color;
+
         _playerControls = new PlayerControls();
         _attackAction = _playerControls.Player.Attack;
-        _collider.enabled = false;
     }
 
     private void OnEnable()
@@ -73,29 +70,77 @@ public class WeaponHitBox : MonoBehaviour
         _isAttacking = true;
         _lastAttackTime = Time.time;
 
-        // Change visuals for attack
-        _spriteRenderer.color = _attackColor;
-        transform.localScale = new Vector3(_idleScale.x, _idleScale.y * AttackScaleY, _idleScale.z);
-        _collider.enabled = true;
-        yield return new WaitForSeconds(AttackDuration);
+        ResolveHits();
 
-        // Reset visuals after attack
-        _collider.enabled = false;
-        transform.localScale = _idleScale;
-        _spriteRenderer.color = _idleColor;
+        if (_weaponRenderer != null)
+            _weaponRenderer.color = _attackColor;
+
+        yield return new WaitForSeconds(AttackDuration);
+        
+        if (_weaponRenderer != null)
+            _weaponRenderer.color = _idleColor;
+
         _isAttacking = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void ResolveHits()
     {
-        if (!_isAttacking)
-            return;
+        Vector2 origin = transform.position;
+        float queryRadius = Mathf.Max(ForwardRadius, LateralRadius);
+        Collider2D[] candidates = Physics2D.OverlapCircleAll(origin, queryRadius, _foodLayers);
+        foreach (Collider2D candidate in candidates)
+        {
+            if (!IsInsideHitArea(candidate.bounds.center))
+                continue;
 
-        Food food = collider.GetComponent<Food>();
-        if (food == null)
-            return;
+            Food food = candidate.GetComponent<Food>();
+            if (food != null)
+                food.OnHitByWeapon(AttackDamage);
+        }
+    }
 
-        food.OnHitByWeapon(AttackDamage);
-        // TODO: Add visual feedback for the food being hit by the weapon (e.g., play an animation, change color, etc.)
+    private bool IsInsideHitArea(Vector2 point)
+    {
+        Vector2 toTarget = point - (Vector2)transform.position;
+
+        float forwardDistance = Vector2.Dot(toTarget, transform.right);
+        if (forwardDistance < 0f)
+            return false;
+
+        float lateralDistance = Vector2.Dot(toTarget, transform.up);
+
+        float normalizedForward = forwardDistance / ForwardRadius;
+        float normalizedLateral = lateralDistance / LateralRadius;
+
+        return normalizedForward * normalizedForward + normalizedLateral * normalizedLateral <= 1f;   
+    }
+
+    // DEBUG HITBOX
+    private void OnDrawGizmos()
+    {
+        if (!Application.isPlaying) return;
+        if (ConfigRegistry.Instance == null || UpgradeSystem.Instance == null) return;
+
+        Gizmos.color = _isAttacking ? Color.red : new Color(1f, 1f, 1f, 0.35f);
+
+        Vector3 origin = transform.position;
+        float a = ForwardRadius;
+        float b = LateralRadius;
+
+        const int segments = 24;
+        Vector3 previous = origin + transform.up * -b;
+
+        for (int i = 1; i <= segments; i++)
+        {
+            float t = Mathf.Lerp(-Mathf.PI / 2f, Mathf.PI / 2f, i / (float)segments);
+            Vector3 current = origin
+                + transform.right * (a * Mathf.Cos(t))
+                + transform.up * (b * Mathf.Sin(t));
+
+            Gizmos.DrawLine(previous, current);
+            previous = current;
+        }
+
+        Gizmos.DrawLine(origin + transform.up * b, origin + transform.up * -b); // flat back edge
     }
 }
