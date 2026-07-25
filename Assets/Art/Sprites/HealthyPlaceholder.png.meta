@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 7a6fc781599a27849b88615ff5ba7bb9
+guid: 67e423ae965c3264b82d4547c68337a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5406690475252005876
-    second: Donut-sheet_0
-  - first:
-      213: 1477039727730288067
-    second: Donut-sheet_1
-  - first:
-      213: -2353225056855071055
-    second: Donut-sheet_2
-  - first:
-      213: -5469452135034872855
-    second: Donut-sheet_3
+      213: 2729000475568545578
+    second: HealthyPlaceholder_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Donut-sheet_0
+      name: HealthyPlaceholder_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 166
-        height: 54
+        x: 10
+        y: 3
+        width: 140
+        height: 155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,74 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4fb32e3675c680b40800000000000000
-      internalID: 5406690475252005876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Donut-sheet_1
-      rect:
-        serializedVersion: 2
-        x: 165
-        y: 1
-        width: 55
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3c5e0828ecf7f7410800000000000000
-      internalID: 1477039727730288067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Donut-sheet_2
-      rect:
-        serializedVersion: 2
-        x: 219
-        y: 4
-        width: 57
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1b6ea99574aa75fd0800000000000000
-      internalID: -2353225056855071055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Donut-sheet_3
-      rect:
-        serializedVersion: 2
-        x: 275
-        y: 1
-        width: 55
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9eb9e37f24a9814b0800000000000000
-      internalID: -5469452135034872855
+      spriteID: a2f9222497b5fd520800000000000000
+      internalID: 2729000475568545578
       vertices: []
       indices: 
       edges: []
@@ -236,10 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Donut-sheet_0: 5406690475252005876
-      Donut-sheet_1: 1477039727730288067
-      Donut-sheet_2: -2353225056855071055
-      Donut-sheet_3: -5469452135034872855
+      HealthyPlaceholder_0: 2729000475568545578
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

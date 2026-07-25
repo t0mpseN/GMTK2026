@@ -25,8 +25,8 @@
 - [x] Add custom font
 - [x] Improve currency display 
 - [x] Add countdown timer bar 
-- [ ] Add grass tiles to background
-- [ ] Add donut enemy sprites
+- [x] Add grass tiles to background
+- [x] Add donut enemy sprites
 - [ ] Add weight during runs (move spd based on it)
 - [ ] Add move spd upgrade
 - [ ] Add popup after run is over: 

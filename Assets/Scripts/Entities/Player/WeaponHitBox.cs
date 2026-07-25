@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class WeaponHitBox : MonoBehaviour
 {
+    // DEBUG
+    [SerializeField] private HitboxVisual _hitboxVisual;
+
     // FIELDS & PROPERTIES
     [SerializeField] private LayerMask _foodLayers;
     [SerializeField] private SpriteRenderer _weaponRenderer;
@@ -72,13 +75,17 @@ public class WeaponHitBox : MonoBehaviour
 
         ResolveHits();
 
-        if (_weaponRenderer != null)
-            _weaponRenderer.color = _attackColor;
+        _hitboxVisual?.Show(ForwardRadius, LateralRadius);
+
+        //if (_weaponRenderer != null)
+        //    _weaponRenderer.color = _attackColor;
 
         yield return new WaitForSeconds(AttackDuration);
-        
-        if (_weaponRenderer != null)
-            _weaponRenderer.color = _idleColor;
+
+        _hitboxVisual?.Hide();
+
+        //if (_weaponRenderer != null)
+        //    _weaponRenderer.color = _idleColor;
 
         _isAttacking = false;
     }
