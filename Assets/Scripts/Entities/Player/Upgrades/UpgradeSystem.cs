@@ -5,9 +5,13 @@ public class UpgradeSystem : MonoBehaviour
 {
     // FIELDS & PROPERTIES
     public static UpgradeSystem Instance { get; private set; }
-    public event Action<UpgradeId, int> OnUpgradePurchased;
     [SerializeField] private UpgradeCatalog _catalog;
     public UpgradeCatalog Catalog => _catalog;
+
+
+    // EVENTS 
+    public event Action<UpgradeId, int> OnUpgradePurchased;
+    public event Action OnUpgradesReset;
 
 
     // METHODS
@@ -70,9 +74,42 @@ public class UpgradeSystem : MonoBehaviour
         return true;
     }
 
-    public int GetValue(UpgradeId id)
+    public float GetValue(UpgradeId id)
     {
         UpgradeDefinition upgrade = _catalog.Get(id);
-        return upgrade != null ? upgrade.GetValueAtLevel(GetLevel(id)) : 0;
+        return upgrade != null ? upgrade.GetValueAtLevel(GetLevel(id)) : 0f;
+    }
+
+    public void ResetUpgrades(bool refundCurrency)
+    {
+        if (refundCurrency)
+        {
+            int refund = CalculateTotalSpent();   // ANTES de limpar
+            GameData.Instance.AddCurrency(refund);
+        }
+
+        GameData.Instance.Data.ClearUpgrades();
+        SaveSystem.Save(GameData.Instance.Data);
+
+        OnUpgradesReset?.Invoke();
+    }
+
+    private int CalculateTotalSpent()
+    {
+        int total = 0;
+
+        foreach (UpgradeDefinition definition in _catalog.Upgrades)
+        {
+            if (definition == null) continue;
+
+            int level = GetLevel(definition.Id);
+            for (int i = 1; i <= level; i++)
+            {
+                UpgradeLevel data = definition.GetLevel(i);
+                if (data != null) total += data.cost;
+            }
+        }
+
+        return total;
     }
 }

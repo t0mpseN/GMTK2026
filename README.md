@@ -27,8 +27,8 @@
 - [x] Add countdown timer bar 
 - [x] Add grass tiles to background
 - [x] Add donut enemy sprites
-- [ ] Add weight during runs (move spd based on it)
-- [ ] Add move spd upgrade
+- [x] Add move spd upgrade
+- [x] Add hit feedback (small knockback + white blink)
 - [ ] Add popup after run is over: 
     - Show calories spent to currency conversion 
     - Maybe show other stats like total run time and enemies killed
@@ -36,7 +36,7 @@
 - [ ] Add skills/buffs (if any)
 - [ ] Implement actual visual elements
 - [ ] Add more food types
-- [ ] Add hit feedback (small knockback + white blink)
+- [ ] Add weight during runs (move spd based on it)?
 
 ## 25/07 - Saturday
 - [ ] Polish visuals

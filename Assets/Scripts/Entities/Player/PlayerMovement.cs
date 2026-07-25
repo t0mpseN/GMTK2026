@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private PlayerControls _controls;
     private InputAction _moveAction;
     private Vector2 _input;
-    [SerializeField] private float _moveSpeed = 5f;
-    public float MoveSpeed => _moveSpeed;
+    [SerializeField] private float _baseMoveSpeed = 5f;
+    public float MoveSpeed => _baseMoveSpeed + UpgradeSystem.Instance.GetValue(UpgradeId.MoveSpeed);
     public bool IsMoving => _input.sqrMagnitude > 0.01f;
 
     // METHODS
@@ -43,6 +43,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidBody.MovePosition(_rigidBody.position + _input * _moveSpeed * Time.fixedDeltaTime);
+        _rigidBody.MovePosition(_rigidBody.position + _input * MoveSpeed * Time.fixedDeltaTime);
     }
 }

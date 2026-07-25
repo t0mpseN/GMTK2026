@@ -5,15 +5,16 @@ public class UpgradeDefinition : ScriptableObject
 {
     // FIELDS & PROPERTIES
     [SerializeField] private UpgradeId _id;
+    public UpgradeId Id => _id;
+
     [SerializeField] private string _displayName;
+    public string DisplayName => _displayName;
+
     [SerializeField] private Sprite _icon;
+    public Sprite Icon => _icon;
 
     [Tooltip("Index 0 = Level 1. Array size defines max upgrade level")]
     [SerializeField] private UpgradeLevel[] _levels;
-
-    public UpgradeId Id => _id;
-    public string DisplayName => _displayName;
-    public Sprite Icon => _icon;
     public int MaxLevel => _levels.Length;
 
 
@@ -26,9 +27,10 @@ public class UpgradeDefinition : ScriptableObject
         return _levels[level - 1];
     }
 
-    public int GetValueAtLevel(int level)
+    public float GetValueAtLevel(int level)
     {
         UpgradeLevel data = GetLevel(level);
-        return data != null ? data.value : 0;
+
+        return data != null ? data.value : 0f;
     }
 }

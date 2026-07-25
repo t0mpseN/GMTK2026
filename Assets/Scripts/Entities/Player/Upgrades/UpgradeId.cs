@@ -5,4 +5,5 @@ public enum UpgradeId
     TimePerRun,
     MaxHealthyFoodIncrease,
     CurrencyPerKill,
+    MoveSpeed,
 }

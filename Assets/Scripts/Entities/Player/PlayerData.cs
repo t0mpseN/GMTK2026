@@ -34,4 +34,9 @@ public class PlayerData
 
         upgrades.Add(new UpgradeProgress { id = id, level = level });
     }
+
+    public void ClearUpgrades()
+    {
+        upgrades.Clear();
+    }
 }

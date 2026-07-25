@@ -1,26 +1,41 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class Food : MonoBehaviour
 {
     // FIELDS & PROPERTIES
+    protected Rigidbody2D _rigidBody;
+    protected Transform _target;
+    public SpriteRenderer spriteRenderer;
+    private Color _baseColor;
+    private Vector2 _knockbackVelocity;
+    private Coroutine _flashRoutine;
+    public bool isDying;
+
+    [Header("Basic Properties")]
     [SerializeField] protected int _health = 1;
     public int Health => _health;
-
     [SerializeField] protected float _moveSpeed = 3f;
     public float MoveSpeed => _moveSpeed;
-
     protected abstract int CurrencyReward { get; }
     protected abstract float TimeReward { get; }
 
-    protected Rigidbody2D _rigidBody;
-    protected Transform _target;
+    [Header("Hit Feedback")]
+    [SerializeField] private float _knockbackForce = 5f;
+    [SerializeField] private float _knockbackDecay = 25f;
+    [SerializeField] private float _flashDuration = 0.08f;
+    [SerializeField] private Color _flashColor = new Color(3f, 3f, 3f, 1f);
+    [SerializeField] public float deathDuration = 0.3f;
+    [SerializeField] public Color deathColor = new Color(3f, 0.25f, 0.25f, 1f);
 
 
     // METHODS
     protected virtual void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        _baseColor = spriteRenderer.color;
     }
 
     protected virtual void Start()
@@ -38,7 +53,12 @@ public abstract class Food : MonoBehaviour
             return;
 
         Vector2 direction = GetMovementDirection();
-        _rigidBody.MovePosition(_rigidBody.position + direction * _moveSpeed * Time.fixedDeltaTime);
+        Vector2 delta = direction * _moveSpeed + _knockbackVelocity;
+
+        _rigidBody.MovePosition(_rigidBody.position + delta * Time.fixedDeltaTime);
+
+        _knockbackVelocity = Vector2.MoveTowards(
+            _knockbackVelocity, Vector2.zero, _knockbackDecay * Time.fixedDeltaTime);
     }
 
     protected Vector2 DirectionToTarget()
@@ -51,17 +71,66 @@ public abstract class Food : MonoBehaviour
         return DirectionToTarget();
     }
 
-    public virtual void OnHitByWeapon(int damage)
+    public virtual void OnHitByWeapon(int damage, Vector2 hitSource)
     {
-        _health = _health - damage;
+        if (isDying)
+            return;
+
+        _health -= damage;
 
         if (_health <= 0)
-            OnDeath();
+        {
+            StartCoroutine(OnDeath()); 
+            return;
+        }
+
+        ApplyKnockback(hitSource);
+        StartFlash();
     }
     
-    protected virtual void OnDeath()
+    protected virtual IEnumerator OnDeath()
     {
-        GameTimer.Instance?.AddTime(TimeReward);
+        isDying = true;
+
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null)
+            collider.enabled = false;
+
+        if (_flashRoutine != null)
+            StopCoroutine(_flashRoutine);
+
+        spriteRenderer.color = deathColor;
+        yield return new WaitForSeconds(deathDuration);
+
+        GameTimer.Instance.AddTime(TimeReward);
+        GameData.Instance.AddCurrency(CurrencyReward); 
         Destroy(gameObject);
     }
+
+    private void ApplyKnockback(Vector2 hitSource)
+    {
+        Vector2 away = ((Vector2)transform.position - hitSource).normalized;
+
+        if (away.sqrMagnitude < 0.0001f)
+            away = Random.insideUnitCircle.normalized; // acertado exatamente no centro
+
+        _knockbackVelocity = away * _knockbackForce;
+    }
+
+    private void StartFlash()
+    {
+        if (_flashRoutine != null)
+            StopCoroutine(_flashRoutine);
+
+        _flashRoutine = StartCoroutine(FlashRoutine());
+    }
+
+    private IEnumerator FlashRoutine()
+    {
+        spriteRenderer.color = _flashColor;
+        yield return new WaitForSeconds(_flashDuration);
+        spriteRenderer.color = _baseColor;
+        _flashRoutine = null;
+    }
+
 }

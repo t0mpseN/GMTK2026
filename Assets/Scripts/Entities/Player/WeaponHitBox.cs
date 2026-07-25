@@ -26,7 +26,7 @@ public class WeaponHitBox : MonoBehaviour
     private float RangeScale => 1f + UpgradeSystem.Instance.GetValue(UpgradeId.AttackRange);
     private float ForwardRadius => Config.BaseForwardRadius * RangeScale;
     private float LateralRadius => Config.BaseLateralRadius * RangeScale;
-    protected virtual int AttackDamage => Config.BaseDamage + UpgradeSystem.Instance.GetValue(UpgradeId.AttackDamage);
+    protected virtual int AttackDamage => Config.BaseDamage + (int)UpgradeSystem.Instance.GetValue(UpgradeId.AttackDamage);
     protected virtual float AttackDuration => Config.BaseAttackDuration;
     protected virtual float AttackCooldown => Config.BaseAttackCooldown;
 
@@ -102,7 +102,7 @@ public class WeaponHitBox : MonoBehaviour
 
             Food food = candidate.GetComponent<Food>();
             if (food != null)
-                food.OnHitByWeapon(AttackDamage);
+                food.OnHitByWeapon(AttackDamage, origin);
         }
     }
 
