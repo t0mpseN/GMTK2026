@@ -7,10 +7,10 @@ public abstract class Food : MonoBehaviour
     // FIELDS & PROPERTIES
     protected Rigidbody2D _rigidBody;
     protected Transform _target;
-    public SpriteRenderer spriteRenderer;
-    private Color _baseColor;
     private Vector2 _knockbackVelocity;
     private Coroutine _flashRoutine;
+    public SpriteRenderer spriteRenderer;
+    public Color baseColor;
     public bool isDying;
 
     [Header("Basic Properties")]
@@ -47,7 +47,7 @@ public abstract class Food : MonoBehaviour
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        _baseColor = spriteRenderer.color;
+        baseColor = spriteRenderer.color;
     }
 
     protected virtual void Start()
@@ -177,7 +177,7 @@ public abstract class Food : MonoBehaviour
     {
         spriteRenderer.color = _flashColor;
         yield return new WaitForSeconds(_flashDuration);
-        spriteRenderer.color = _baseColor;
+        spriteRenderer.color = baseColor;
         _flashRoutine = null;
     }
 

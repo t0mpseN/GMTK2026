@@ -1,10 +1,34 @@
 fileFormatVersion: 2
-guid: 4ee17662a40a4b84c98e11001aba45b0
+guid: 821b93875867e4a4fb170ef4b318958a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6948869885444343264
-    second: Placeholder_Icons_0
+      213: 4400811417565351755
+    second: Inventory_Blocks_Spritesheet_0
+  - first:
+      213: -5665768054470936916
+    second: Inventory_Blocks_Spritesheet_1
+  - first:
+      213: -7058766558391035033
+    second: Inventory_Blocks_Spritesheet_2
+  - first:
+      213: -2482250231004988559
+    second: Inventory_Blocks_Spritesheet_3
+  - first:
+      213: 2658464420741362946
+    second: Inventory_Blocks_Spritesheet_4
+  - first:
+      213: -5434827792550559909
+    second: Inventory_Blocks_Spritesheet_5
+  - first:
+      213: 8118200262300106799
+    second: Inventory_Blocks_Spritesheet_6
+  - first:
+      213: -6017733155289879417
+    second: Inventory_Blocks_Spritesheet_7
+  - first:
+      213: -2245618319781525362
+    second: Inventory_Blocks_Spritesheet_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,287 +150,199 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Placeholder_Icons_0
+      name: Inventory_Blocks_Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 8
+        y: 102
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e5c15818585f6060800000000000000
-      internalID: 6948869885444343264
+      spriteID: b4f4773faa2d21d30800000000000000
+      internalID: 4400811417565351755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_Icons_1
+      name: Inventory_Blocks_Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 136
-        y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 56
+        y: 102
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 92753d6fd1fced941a0ecd0ecd7a16f8
-      internalID: -1345237015
+      spriteID: ca6f08519f52f51b0800000000000000
+      internalID: -5665768054470936916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_Icons_2
+      name: Inventory_Blocks_Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 272
-        y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 104
+        y: 102
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1176708543abb76418d46f3cb28f1fe5
-      internalID: -551054737
+      spriteID: 76b12bec6393a0e90800000000000000
+      internalID: -7058766558391035033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_Icons_3
+      name: Inventory_Blocks_Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 408
-        y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 8
+        y: 54
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d0fcbd7bfb014ac47869ab7130ebed01
-      internalID: 1843022278
+      spriteID: 17bf05101964d8dd0800000000000000
+      internalID: -2482250231004988559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_Icons_4
+      name: Inventory_Blocks_Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 544
-        y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 56
+        y: 54
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5a7aa4591a925a845a930e2730cce147
-      internalID: -1048058334
+      spriteID: 205bd463e43c4e420800000000000000
+      internalID: 2658464420741362946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_Icons_5
+      name: Inventory_Blocks_Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 680
-        y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 104
+        y: 54
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5370ada5f1322f745b366164df3bd0d9
-      internalID: -1665018374
+      spriteID: b5f7a99eaec9394b0800000000000000
+      internalID: -5434827792550559909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_Icons_6
+      name: Inventory_Blocks_Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 816
+        x: 2
         y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2ffb0430b63e9084fb11a36d0377e858
-      internalID: -853151654
+      spriteID: f2081e16024a9a070800000000000000
+      internalID: 8118200262300106799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_Icons_7
+      name: Inventory_Blocks_Spritesheet_7
       rect:
         serializedVersion: 2
-        x: 952
+        x: 50
         y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d07259760d65f224285c77ed4b818bca
-      internalID: 2064958543
+      spriteID: 78c2bdd1497bc7ca0800000000000000
+      internalID: -6017733155289879417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_Icons_8
+      name: Inventory_Blocks_Spritesheet_8
       rect:
         serializedVersion: 2
-        x: 1088
+        x: 98
         y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8919d6a079e84db4880bdaf974720d08
-      internalID: -1249774424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Placeholder_Icons_9
-      rect:
-        serializedVersion: 2
-        x: 1224
-        y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d554587b581d4b4daed223ec83db001
-      internalID: 1762342709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Placeholder_Icons_10
-      rect:
-        serializedVersion: 2
-        x: 1360
-        y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0021b163da1d78a47876674f412ca573
-      internalID: -351471262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Placeholder_Icons_11
-      rect:
-        serializedVersion: 2
-        x: 1496
-        y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd310046d652bea4dadfdfade7612c81
-      internalID: 1370045867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Placeholder_Icons_12
-      rect:
-        serializedVersion: 2
-        x: 1632
-        y: 1
-        width: 136
-        height: 136
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93b3379088061784d8516306ee29470a
-      internalID: -1104774182
+      spriteID: e8800543906f5d0e0800000000000000
+      internalID: -2245618319781525362
       vertices: []
       indices: 
       edges: []
@@ -415,7 +351,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 65f1c5c5855d7ae45abe7fc98ee73e82
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -423,25 +359,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceOnImport
-        value: True
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":true,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":136.0,"y":136.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":1.0,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":5,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Placeholder_Icons_0: 6948869885444343264
-      Placeholder_Icons_1: -1345237015
-      Placeholder_Icons_10: -351471262
-      Placeholder_Icons_11: 1370045867
-      Placeholder_Icons_12: -1104774182
-      Placeholder_Icons_2: -551054737
-      Placeholder_Icons_3: 1843022278
-      Placeholder_Icons_4: -1048058334
-      Placeholder_Icons_5: -1665018374
-      Placeholder_Icons_6: -853151654
-      Placeholder_Icons_7: 2064958543
-      Placeholder_Icons_8: -1249774424
-      Placeholder_Icons_9: 1762342709
+      Inventory_Blocks_Spritesheet_0: 4400811417565351755
+      Inventory_Blocks_Spritesheet_1: -5665768054470936916
+      Inventory_Blocks_Spritesheet_2: -7058766558391035033
+      Inventory_Blocks_Spritesheet_3: -2482250231004988559
+      Inventory_Blocks_Spritesheet_4: 2658464420741362946
+      Inventory_Blocks_Spritesheet_5: -5434827792550559909
+      Inventory_Blocks_Spritesheet_6: 8118200262300106799
+      Inventory_Blocks_Spritesheet_7: -6017733155289879417
+      Inventory_Blocks_Spritesheet_8: -2245618319781525362
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthyFood
   spriteRenderer: {fileID: 0}
+  baseColor: {r: 0, g: 0, b: 0, a: 0}
   isDying: 0
   _health: 1
   _moveSpeed: 1.8
@@ -83,7 +84,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _flavorTextChance: 0.3
+  _textOffset: 0.6
   _fleeDetectionRadius: 3
+  _colorVariants:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0.5, g: 1, b: 0.4, a: 1}
+  - {r: 1, g: 0.97991306, b: 0.0047169924, a: 1}
 --- !u!212 &6539502672949636321
 SpriteRenderer:
   serializedVersion: 3

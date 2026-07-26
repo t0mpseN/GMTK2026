@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 67e423ae965c3264b82d4547c68337a6
+guid: 81a22fe18f438e7458316fc1ff2509b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2729000475568545578
-    second: HealthyPlaceholder_0
+      213: 7267828462667370698
+    second: Setting menu_0
+  - first:
+      213: -7390560224966502635
+    second: Setting menu_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HealthyPlaceholder_0
+      name: Setting menu_0
       rect:
         serializedVersion: 2
         x: 10
-        y: 3
-        width: 140
-        height: 155
+        y: 9
+        width: 108
+        height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +144,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2f9222497b5fd520800000000000000
-      internalID: 2729000475568545578
+      spriteID: ac013cdea738cd460800000000000000
+      internalID: 7267828462667370698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting menu_1
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 9
+        width: 108
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5179dbbd1a47f6990800000000000000
+      internalID: -7390560224966502635
       vertices: []
       indices: 
       edges: []
@@ -161,7 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HealthyPlaceholder_0: 2729000475568545578
+      Setting menu_0: 7267828462667370698
+      Setting menu_1: -7390560224966502635
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

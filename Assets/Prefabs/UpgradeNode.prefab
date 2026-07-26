@@ -97,9 +97,9 @@ MonoBehaviour:
   _hoverScale: 1.15
   _hoverRotation: -8
   _animationSpeed: 12
-  _availableColor: {r: 1, g: 1, b: 1, a: 1}
-  _lockedColor: {r: 0.35, g: 0.35, b: 0.35, a: 1}
-  _maxedColor: {r: 1, g: 0.85, b: 0.3, a: 1}
+  _availableColor: {r: 0.21213461, g: 0.5754717, b: 0, a: 1}
+  _lockedColor: {r: 0.6666667, g: 0.47058827, b: 0.34901962, a: 1}
+  _maxedColor: {r: 0.5330737, g: 0.8018868, b: 0.11725702, a: 1}
 --- !u!1 &4576822614840309577
 GameObject:
   m_ObjectHideFlags: 0

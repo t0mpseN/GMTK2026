@@ -15,8 +15,25 @@ public class HealthyFood : Food
     protected override string KilledMessage => $"+{CurrencyReward:0} kcal";
     protected override Color KilledMessageColor => FloatingTextSpawner.Instance.CurrencyColor;
 
+    [Header("Color Variants")]
+    [SerializeField]
+    private Color[] _colorVariants =
+    {
+        new Color(1f, 0.15f, 0.15f),   
+        new Color(0.2f, 0.85f, 0.15f),
+        new Color(1f, 0.8f, 0.1f)     
+    };
 
     // METHODS 
+    protected override void Awake()
+    {
+        base.Awake();   // primeiro — pega renderer, define _baseColor = cinza
+
+        Color chosen = _colorVariants[Random.Range(0, _colorVariants.Length)];
+        spriteRenderer.color = chosen;
+        baseColor = chosen;   // sobrescreve DEPOIS
+    }
+
     protected override Vector2 GetMovementDirection()
     {
         if (_fleeDetectionRadius > 0f && _target != null)

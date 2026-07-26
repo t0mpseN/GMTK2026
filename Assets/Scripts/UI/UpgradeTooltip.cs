@@ -54,14 +54,17 @@ public class UpgradeTooltip : MonoBehaviour
             _descriptionText.text = next.description ?? string.Empty;
         }
 
-        float halfHeight = anchor.rect.height * 0.5f * anchor.lossyScale.y;
-        bool fitsAbove = anchor.position.y + halfHeight + _verticalGap + _root.rect.height * _root.lossyScale.y < Screen.height;
-        float direction = fitsAbove ? 1f : -1f;
-        _root.pivot = new Vector2(0.5f, fitsAbove ? 0f : 1f);
-        _root.position = anchor.position + new Vector3(0f, direction * (halfHeight + _verticalGap), 0f);
+        float halfWidth = anchor.rect.width * 0.5f * anchor.lossyScale.x;
+        float tooltipWidth = _root.rect.width * _root.lossyScale.x;
+
+        bool fitsRight = anchor.position.x + halfWidth + _verticalGap + tooltipWidth < Screen.width;
+        float direction = fitsRight ? 1f : -1f;
+
+        _root.pivot = new Vector2(fitsRight ? 0f : 1f, 0.5f);
+        _root.position = anchor.position + new Vector3(direction * (halfWidth + _verticalGap), 0f, 0f);
 
         _root.gameObject.SetActive(true);
-        _root.SetAsLastSibling(); // garante que fica por cima dos nós
+        _root.SetAsLastSibling();
     }
 
     public void Hide()

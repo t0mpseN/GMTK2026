@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
   _id: 0
   _displayName: Leg Day
-  _icon: {fileID: -1048058334, guid: 4ee17662a40a4b84c98e11001aba45b0, type: 3}
+  _icon: {fileID: -605369060, guid: 4fbee70a7011cfd4fb29fdcf29b888c9, type: 3}
   _levels:
   - cost: 0
     value: 2.5

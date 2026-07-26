@@ -61,16 +61,15 @@
 - [x] Add junk food eaten penalty property
 - [x] Add eating animations & improve feedback
 - [x] Add damage number feedback (+ custom strings when foods are eaten)
-- [ ] Add credits
-- [ ] Purchasable upgrade buttons should be green 
+- [x] Purchasable upgrade buttons should be green 
 - [ ] Add random colors on apples (new prefabs?)
-- [ ] Improve progress bar
+- [x] Improve progress bar
 - [x] Improve fonts
-- [ ] Improve main menu
-- [ ] Fix upgrade icons
+- [x] Improve main menu
+- [x] Fix upgrade icons
 - [ ] Add shadows
 - [ ] Improve food hitboxes
-- [ ] Add more food types
+- [ ] Add credits
 - [ ] Polish visuals
 - [ ] Playtesting & bugfixing
 
@@ -80,3 +79,4 @@
     - Maybe show other stats like total run time and enemies killed
 - [ ] Add weight during runs (move spd based on it)?
 - [ ] Add skills/buffs (if any)
+- [ ] Add more food types

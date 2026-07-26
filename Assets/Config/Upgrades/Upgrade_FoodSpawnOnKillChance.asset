@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
   _id: 11
   _displayName: Food On Kill
-  _icon: {fileID: -1345237015, guid: 4ee17662a40a4b84c98e11001aba45b0, type: 3}
+  _icon: {fileID: 1572978354, guid: 4fbee70a7011cfd4fb29fdcf29b888c9, type: 3}
   _levels:
   - cost: 0
     value: 0
