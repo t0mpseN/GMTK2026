@@ -1,5 +1,22 @@
-# GMTK2026 - BACKLOG
+# CALORIE COUNTDOWN - GMTK2026
 
+<div align="center">
+  <a href="https://davifigueiredo.itch.io/calorie-countdown">
+    <img src="docs/preview.gif" width="640" alt="Calorie Countdown">
+  </a>
+  <h3><a href="https://davifigueiredo.itch.io/calorie-countdown">▶ PLAY HERE</a></h3>
+</div>
+
+<img width="955" height="597" alt="image" src="https://github.com/user-attachments/assets/f8919d10-0b7d-453b-a92d-fbb216236fa0" />
+
+<img width="954" height="591" alt="image" src="https://github.com/user-attachments/assets/37c3c62f-f490-40cb-9317-8054f1c57783" />
+
+<img width="951" height="591" alt="image" src="https://github.com/user-attachments/assets/edfc5285-3c7f-43e9-81fb-92721636c931" />
+
+<img width="1915" height="1070" alt="image" src="https://github.com/user-attachments/assets/a493057e-13f6-47c7-8d56-f8f09fa20ea1" />
+
+
+#  - BACKLOG
 ## 22/07 - Wednesday
 - [x] Setup source control
 - [x] Initialize Unity 2D Project
