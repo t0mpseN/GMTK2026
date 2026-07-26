@@ -62,8 +62,9 @@
 - [x] Add eating animations & improve feedback
 - [ ] Add damage number feedback (+ custom strings when foods are eaten)
 - [ ] Add random colors on apples (new prefabs?)
-- [ ] Improve food hitboxes
+- [ ] Fix upgrade icons
 - [ ] Add shadows
+- [ ] Improve food hitboxes
 - [ ] Add more food types
 - [ ] Polish visuals
 - [ ] Playtesting & bugfixing
