@@ -67,16 +67,6 @@
 - [x] Improve fonts
 - [x] Improve main menu
 - [x] Fix upgrade icons
-- [ ] Add shadows
-- [ ] Improve food hitboxes
-- [ ] Add credits
-- [ ] Polish visuals
-- [ ] Playtesting & bugfixing
-
-# POST-JAM IDEAS
-- [ ] Add popup after run is over: 
-    - Show calories spent to currency conversion 
-    - Maybe show other stats like total run time and enemies killed
-- [ ] Add weight during runs (move spd based on it)?
-- [ ] Add skills/buffs (if any)
-- [ ] Add more food types
+- [x] Add shadows
+- [x] Polish visuals
+- [x] Playtesting & bugfixing
