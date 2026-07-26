@@ -17,16 +17,16 @@ MonoBehaviour:
   _icon: {fileID: 1762342709, guid: 4ee17662a40a4b84c98e11001aba45b0, type: 3}
   _levels:
   - cost: 0
-    value: 1
+    value: 1.5
     description: Base slash size
   - cost: 300
-    value: 1.1
+    value: 1.7
     description: 'Increases the size of your slashes '
   - cost: 600
-    value: 1.2
+    value: 2
     description: 'Increases the size of your slashes '
   - cost: 1000
-    value: 1.3
+    value: 2.5
     description: 'Increases the size of your slashes '
   _requirements:
   - upgrade: 1

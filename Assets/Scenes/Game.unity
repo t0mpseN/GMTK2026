@@ -708,12 +708,14 @@ MonoBehaviour:
   _spawnEntries:
   - Label: Healthy Food
     Prefab: {fileID: 8085519708460967382, guid: dc74cc4fddf5a8743b41242815f299ad, type: 3}
-    SpawnInterval: 5
+    SpawnChance: 0.5
+    ChancePerUpgradeLevel: 0
     MaxAliveCount: 3
     Alive: []
   - Label: Junk Food
     Prefab: {fileID: 8098254048766680162, guid: 87e3ba108b245b34e8333deb836680d7, type: 3}
-    SpawnInterval: 3
+    SpawnChance: 0.5
+    ChancePerUpgradeLevel: 0
     MaxAliveCount: 10
     Alive: []
   _player: {fileID: 1669996491}
@@ -1698,7 +1700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: satiety
+  m_text: energy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 802319f8798bae047bcb44c602a918c3, type: 2}
   m_sharedMaterial: {fileID: -5585179692240401263, guid: 802319f8798bae047bcb44c602a918c3, type: 2}

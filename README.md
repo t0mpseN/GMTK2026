@@ -32,7 +32,7 @@
 
 ## 25/07 - Saturday
 - [x] Add proper skill tree
-- [ ] Add upgrades to the game:
+- [x] Add upgrades to the game:
 	- [x] Move speed
 	- [x] Weapon damage
 	- [x] Weapon range
@@ -42,13 +42,13 @@
 	- [x] Energy recovery on healthy food kill
 	- [x] Currency per healthy food
 	- [x] Currency per junk food
-	- [ ] Starting food quantity
-	- [ ] Food spawn per second
-	- [ ] Food spawn on kill chance
-	- [ ] Extra food spawn chance
+	- [x] Starting food quantity
+	- [x] Food spawn per second
+	- [x] Food spawn on kill chance
+	- [x] Extra food spawn chance
 - [x] Add healthy foods can be eaten on collision behaviour
 - [x] Add starting food number spawn (healthy foods)
-- [ ] Swap "satiety" with "energy" -> junk food don't recover energy on kill
+- [x] Swap "satiety" with "energy" -> junk food don't recover energy on kill
 - [ ] Add food spawning progression (start with only healthy foods)
 - [ ] Add food sprites
 - [ ] Add wall (limit world area)
