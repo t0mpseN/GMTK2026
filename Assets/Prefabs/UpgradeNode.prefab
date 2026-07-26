@@ -99,7 +99,7 @@ MonoBehaviour:
   _animationSpeed: 12
   _availableColor: {r: 0.21213461, g: 0.5754717, b: 0, a: 1}
   _lockedColor: {r: 0.6666667, g: 0.47058827, b: 0.34901962, a: 1}
-  _maxedColor: {r: 0.5330737, g: 0.8018868, b: 0.11725702, a: 1}
+  _maxedColor: {r: 0, g: 0.572586, b: 0.7264151, a: 1}
 --- !u!1 &4576822614840309577
 GameObject:
   m_ObjectHideFlags: 0
