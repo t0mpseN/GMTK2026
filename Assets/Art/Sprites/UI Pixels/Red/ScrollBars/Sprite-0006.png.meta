@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 03de1fa2b67181c4a9fc3eed43ebe0dd
+guid: 6392a3d8e37ac584d81736d1cb57e27d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6965266082988649324
-    second: Circle_Crosshair7_0
+      213: 7473920403424214205
+    second: Sprite-0006_0
   - first:
-      213: 27195933075703861
-    second: Circle_Crosshair7_1
+      213: 2831186660323490502
+    second: Sprite-0006_1
   - first:
-      213: -499728992920661265
-    second: Circle_Crosshair7_2
-  - first:
-      213: -1914764506912596817
-    second: Circle_Crosshair7_3
-  - first:
-      213: -5121089215620768411
-    second: Circle_Crosshair7_4
+      213: 8084631971717302214
+    second: Sprite-0006_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -58,12 +52,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -138,101 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Circle_Crosshair7_0
+      name: Sprite-0006_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 69
-        width: 32
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 494926da667665f90800000000000000
-      internalID: -6965266082988649324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle_Crosshair7_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 29
-        width: 21
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 538005a9e8e906000800000000000000
-      internalID: 27195933075703861
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle_Crosshair7_2
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 39
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe2100de02b9019f0800000000000000
-      internalID: -499728992920661265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle_Crosshair7_3
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 29
-        width: 21
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: facd2f863d36d65e0800000000000000
-      internalID: -1914764506912596817
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle_Crosshair7_4
-      rect:
-        serializedVersion: 2
-        x: 29
+        x: 3
         y: 0
-        width: 32
-        height: 21
+        width: 10
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,8 +147,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56d17d7bd7c3ee8b0800000000000000
-      internalID: -5121089215620768411
+      spriteID: dbcf4a52203b8b760800000000000000
+      internalID: 7473920403424214205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-0006_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 5
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6caf76d64456a4720800000000000000
+      internalID: 2831186660323490502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-0006_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 2
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c7c9fda1f1623070800000000000000
+      internalID: 8084631971717302214
       vertices: []
       indices: 
       edges: []
@@ -251,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -261,11 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Circle_Crosshair7_0: -6965266082988649324
-      Circle_Crosshair7_1: 27195933075703861
-      Circle_Crosshair7_2: -499728992920661265
-      Circle_Crosshair7_3: -1914764506912596817
-      Circle_Crosshair7_4: -5121089215620768411
+      Sprite-0006_0: 7473920403424214205
+      Sprite-0006_1: 2831186660323490502
+      Sprite-0006_2: 8084631971717302214
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

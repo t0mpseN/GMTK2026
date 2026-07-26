@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 03de1fa2b67181c4a9fc3eed43ebe0dd
+guid: 107f20792c0174d4a933453281eaad3b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6965266082988649324
-    second: Circle_Crosshair7_0
-  - first:
-      213: 27195933075703861
-    second: Circle_Crosshair7_1
-  - first:
-      213: -499728992920661265
-    second: Circle_Crosshair7_2
-  - first:
-      213: -1914764506912596817
-    second: Circle_Crosshair7_3
-  - first:
-      213: -5121089215620768411
-    second: Circle_Crosshair7_4
+      213: -5543469572509033139
+    second: menu-bg_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,10 +48,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -138,101 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Circle_Crosshair7_0
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 69
-        width: 32
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 494926da667665f90800000000000000
-      internalID: -6965266082988649324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle_Crosshair7_1
+      name: menu-bg_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 29
-        width: 21
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 538005a9e8e906000800000000000000
-      internalID: 27195933075703861
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle_Crosshair7_2
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 39
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe2100de02b9019f0800000000000000
-      internalID: -499728992920661265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle_Crosshair7_3
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 29
-        width: 21
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: facd2f863d36d65e0800000000000000
-      internalID: -1914764506912596817
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Circle_Crosshair7_4
-      rect:
-        serializedVersion: 2
-        x: 29
         y: 0
-        width: 32
-        height: 21
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56d17d7bd7c3ee8b0800000000000000
-      internalID: -5121089215620768411
+      spriteID: d4d996b5bc3a113b0800000000000000
+      internalID: -5543469572509033139
       vertices: []
       indices: 
       edges: []
@@ -261,11 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Circle_Crosshair7_0: -6965266082988649324
-      Circle_Crosshair7_1: 27195933075703861
-      Circle_Crosshair7_2: -499728992920661265
-      Circle_Crosshair7_3: -1914764506912596817
-      Circle_Crosshair7_4: -5121089215620768411
+      menu-bg_0: -5543469572509033139
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
