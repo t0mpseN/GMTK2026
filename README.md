@@ -62,7 +62,7 @@
 - [x] Add eating animations & improve feedback
 - [x] Add damage number feedback (+ custom strings when foods are eaten)
 - [x] Purchasable upgrade buttons should be green 
-- [ ] Add random colors on apples (new prefabs?)
+- [x] Add random colors on apples (new prefabs?)
 - [x] Improve progress bar
 - [x] Improve fonts
 - [x] Improve main menu
