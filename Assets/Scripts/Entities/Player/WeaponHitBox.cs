@@ -1,17 +1,20 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class WeaponHitBox : MonoBehaviour
 {
-    // DEBUG
-    [SerializeField] private HitboxVisual _hitboxVisual;
-
     // FIELDS & PROPERTIES
+    [SerializeField] private SlashVisual _slashVisual; 
     [SerializeField] private LayerMask _foodLayers;
     [SerializeField] private SpriteRenderer _weaponRenderer;
     [SerializeField] private Color _attackColor = Color.red;
+    private WeaponAim _weaponAim;
+
+    private Vector2 _attackOrigin;
+    private Vector2 _attackForward;
+    private Vector2 _attackLateral;
+
     private PlayerControls _playerControls;
     private InputAction _attackAction;
     private Color _idleColor;
@@ -30,10 +33,15 @@ public class WeaponHitBox : MonoBehaviour
     protected virtual float AttackDuration => Config.AttackDuration;
     protected virtual float AttackCooldown => Config.AttackCooldown;
 
+    // DEBUGGING
+    [SerializeField] private HitboxVisual _hitboxVisual;
+
 
     // METHODS
     private void Awake()
     {
+        _weaponAim = GetComponent<WeaponAim>();
+
         if (_weaponRenderer != null)
             _idleColor = _weaponRenderer.color;
 
@@ -77,28 +85,27 @@ public class WeaponHitBox : MonoBehaviour
         _isAttacking = true;
         _lastAttackTime = Time.time;
 
+        _attackOrigin = transform.position;
+        _attackForward = transform.right;
+        _attackLateral = transform.up;
+
         ResolveHits();
 
-        _hitboxVisual?.Show(ForwardRadius, LateralRadius);
-
-        //if (_weaponRenderer != null)
-        //    _weaponRenderer.color = _attackColor;
+        //_hitboxVisual?.Show(ForwardRadius, LateralRadius);
+        _slashVisual?.Play(ForwardRadius, LateralRadius, AttackDuration);
 
         yield return new WaitForSeconds(AttackDuration);
 
-        _hitboxVisual?.Hide();
-
-        //if (_weaponRenderer != null)
-        //    _weaponRenderer.color = _idleColor;
+        //_hitboxVisual?.Hide();
 
         _isAttacking = false;
     }
 
     private void ResolveHits()
     {
-        Vector2 origin = transform.position;
         float queryRadius = Mathf.Max(ForwardRadius, LateralRadius);
-        Collider2D[] candidates = Physics2D.OverlapCircleAll(origin, queryRadius, _foodLayers);
+        Collider2D[] candidates = Physics2D.OverlapCircleAll(_attackOrigin, queryRadius, _foodLayers);
+
         foreach (Collider2D candidate in candidates)
         {
             if (!IsInsideHitArea(candidate.bounds.center))
@@ -106,24 +113,24 @@ public class WeaponHitBox : MonoBehaviour
 
             Food food = candidate.GetComponent<Food>();
             if (food != null)
-                food.OnHitByWeapon(AttackDamage, origin);
+                food.OnHitByWeapon(AttackDamage, _attackOrigin);
         }
     }
 
     private bool IsInsideHitArea(Vector2 point)
     {
-        Vector2 toTarget = point - (Vector2)transform.position;
+        Vector2 toTarget = point - _attackOrigin;
 
-        float forwardDistance = Vector2.Dot(toTarget, transform.right);
+        float forwardDistance = Vector2.Dot(toTarget, _attackForward);
         if (forwardDistance < 0f)
             return false;
 
-        float lateralDistance = Vector2.Dot(toTarget, transform.up);
+        float lateralDistance = Vector2.Dot(toTarget, _attackLateral);
 
         float normalizedForward = forwardDistance / ForwardRadius;
         float normalizedLateral = lateralDistance / LateralRadius;
 
-        return normalizedForward * normalizedForward + normalizedLateral * normalizedLateral <= 1f;   
+        return normalizedForward * normalizedForward + normalizedLateral * normalizedLateral <= 1f;
     }
 
     // DEBUG HITBOX

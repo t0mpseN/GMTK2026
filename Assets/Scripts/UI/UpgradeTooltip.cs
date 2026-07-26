@@ -50,7 +50,7 @@ public class UpgradeTooltip : MonoBehaviour
             UpgradeLevel next = definition.GetLevel(nextLevel);
 
             _levelText.text = $"Lvl {nextLevel}";
-            _costText.text = $"{next.cost} $";
+            _costText.text = $"{next.cost} kcal";
             _descriptionText.text = next.description ?? string.Empty;
         }
 

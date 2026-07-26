@@ -52,6 +52,7 @@
 - [x] Add food spawning progression (start with only healthy foods)
 - [x] Add food sprites
 - [ ] Add slash animation
+- [ ] Add burnt calories count on upgrades popup
 - [ ] Add random colors on apples (new prefabs?)
 - [ ] Add wall (limit world area)
 - [ ] Improve food hitboxes
