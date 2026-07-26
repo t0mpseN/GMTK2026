@@ -1,10 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class HealthyFood : Food
 {
     // FIELDS & PROPERTIES
-    protected override int CurrencyReward => ConfigRegistry.Instance.Economy.CurrencyPerHealthyFood + (int)UpgradeSystem.Instance.GetValue(UpgradeId.CurrencyPerKill);
-    protected override float TimeReward => ConfigRegistry.Instance.Economy.TimeBonusPerHealthyFood;
+    protected override int CurrencyReward => ConfigRegistry.Instance.Economy.CurrencyPerHealthyFood + (int)UpgradeSystem.Instance.GetValue(UpgradeId.CurrencyPerHealthyFood);
+    protected override float TimeReward => ConfigRegistry.Instance.Economy.TimeBonusPerHealthyFood + (int)UpgradeSystem.Instance.GetValue(UpgradeId.EnergyRecoveryOnHealthyFoodKill);
     [SerializeField] private float _fleeDetectionRadius = 5f;
 
 
@@ -19,5 +20,18 @@ public class HealthyFood : Food
         }
 
         return -DirectionToTarget();
+    }
+
+    protected override IEnumerator OnEatenByPlayer()
+    {
+        int currency = RollCurrencyReward();
+
+        spriteRenderer.color = deathColor;
+        yield return new WaitForSeconds(deathDuration);
+
+        GameTimer.Instance.AddTime(TimeReward);
+        GameData.Instance.AddCurrency(currency);
+
+        Destroy(gameObject);
     }
 }

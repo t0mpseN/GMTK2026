@@ -15,5 +15,5 @@ MonoBehaviour:
   _baseDamage: 1
   _baseAttackDuration: 0.15
   _baseAttackCooldown: 0.35
-  _baseForwardRadius: 1
-  _baseLateralRadius: 0.35
+  _baseForwardRadius: 2
+  _baseLateralRadius: 1

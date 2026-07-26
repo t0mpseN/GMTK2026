@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8822c3c3d39425418866da9c2c90793, type: 3}
-  m_Name: Upgrade_CurrencyPerKill
+  m_Name: Upgrade_FoodSpawnOnKillChance
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
-  _id: 4
-  _displayName: Currency Per Kill
-  _icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  _id: 2
+  _displayName: Time Per Run
+  _icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   _levels:
   - cost: 300
-    value: 50
-    description: 
-  - cost: 700
-    value: 100
-    description: 
-  - cost: 1800
-    value: 250
-    description: 
+    value: 15
+    description: Level 1
+  - cost: 600
+    value: 30
+    description: Level 2
+  - cost: 1000
+    value: 60
+    description: Level 3

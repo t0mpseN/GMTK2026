@@ -5,7 +5,7 @@ public class GameTimer : MonoBehaviour
 {
     // FIELDS & PROPERTIES
     public static GameTimer Instance { get; private set; }
-    protected virtual float StartingTime => ConfigRegistry.Instance.Run.StartingTime + UpgradeSystem.Instance.GetValue(UpgradeId.TimePerRun);
+    protected virtual float StartingTime => ConfigRegistry.Instance.Run.StartingTime + UpgradeSystem.Instance.GetValue(UpgradeId.EnergyPerRun);
     public float MaxTime { get; private set; }
     public float Progress => MaxTime > 0f ? TimeRemaining / MaxTime : 0f;
     public float TimeRemaining { get; private set; }

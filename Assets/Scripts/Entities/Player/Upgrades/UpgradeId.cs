@@ -1,9 +1,16 @@
 public enum UpgradeId
 {
-    AttackDamage,
-    AttackRange,
-    TimePerRun,
-    MaxHealthyFoodIncrease,
-    CurrencyPerKill,
     MoveSpeed,
+    WeaponDamage,
+    WeaponRange,
+    AttackCooldownReduction,
+    DoubleCurrencyChance,
+    EnergyPerRun,
+    EnergyRecoveryOnHealthyFoodKill,
+    CurrencyPerHealthyFood,
+    CurrencyPerJunkFood,
+    StartingFoodQuantity,
+    FoodSpawnPerSecond,
+    FoodSpawnOnKillChance,
+    ExtraFoodSpawnChance,
 }

@@ -50,6 +50,9 @@ public class UpgradeSystem : MonoBehaviour
 
     public bool CanPurchase(UpgradeId id)
     {
+        if (!ArePrerequisitesMet(id))
+            return false;
+
         int cost = GetNextLevelCost(id);
         if (cost < 0)
             return false;
@@ -111,5 +114,20 @@ public class UpgradeSystem : MonoBehaviour
         }
 
         return total;
+    }
+
+    public bool ArePrerequisitesMet(UpgradeId id)
+    {
+        UpgradeDefinition definition = _catalog.Get(id);
+        if (definition == null) 
+            return false;
+
+        foreach (UpgradeRequirement requirement in definition.Requirements)
+        {
+            if (GetLevel(requirement.upgrade) < requirement.minLevel)
+                return false;
+        }
+
+        return true;
     }
 }

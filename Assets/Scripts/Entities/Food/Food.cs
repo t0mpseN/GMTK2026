@@ -29,6 +29,8 @@ public abstract class Food : MonoBehaviour
     [SerializeField] public float deathDuration = 0.3f;
     [SerializeField] public Color deathColor = new Color(3f, 0.25f, 0.25f, 1f);
 
+    public float DoubleCurrencyChance => UpgradeSystem.Instance.GetValue(UpgradeId.DoubleCurrencyChance);
+
 
     // METHODS
     protected virtual void Awake()
@@ -80,7 +82,7 @@ public abstract class Food : MonoBehaviour
 
         if (_health <= 0)
         {
-            StartCoroutine(OnDeath()); 
+            StartCoroutine(OnKilled()); 
             return;
         }
 
@@ -88,9 +90,11 @@ public abstract class Food : MonoBehaviour
         StartFlash();
     }
     
-    protected virtual IEnumerator OnDeath()
+    protected virtual IEnumerator OnKilled()
     {
         isDying = true;
+
+        int currency = RollCurrencyReward();
 
         Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)
@@ -103,9 +107,11 @@ public abstract class Food : MonoBehaviour
         yield return new WaitForSeconds(deathDuration);
 
         GameTimer.Instance.AddTime(TimeReward);
-        GameData.Instance.AddCurrency(CurrencyReward); 
+        GameData.Instance.AddCurrency(currency); 
         Destroy(gameObject);
     }
+
+    protected abstract IEnumerator OnEatenByPlayer();
 
     private void ApplyKnockback(Vector2 hitSource)
     {
@@ -133,4 +139,21 @@ public abstract class Food : MonoBehaviour
         _flashRoutine = null;
     }
 
+    protected int RollCurrencyReward()
+    {
+        int reward = CurrencyReward;
+
+        if (Chance.Roll(DoubleCurrencyChance))
+            reward *= 2;
+
+        return reward;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (isDying || !collision.CompareTag("Player"))
+            return;
+
+        StartCoroutine(OnEatenByPlayer());
+    }
 }

@@ -10,21 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8822c3c3d39425418866da9c2c90793, type: 3}
-  m_Name: Upgrade_MoveSpeed
+  m_Name: Upgrade_AttackCooldownReduction
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
-  _id: 0
-  _displayName: Move Speed
-  _icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  _id: 3
+  _displayName: Healthy Food Spawn
+  _icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   _levels:
   - cost: 100
-    value: 2
+    value: 1
     description: Level 1
-  - cost: 200
-    value: 5
+  - cost: 300
+    value: 2
     description: Level 2
   - cost: 500
-    value: 8
+    value: 3
     description: Level 3
-  _requirements:
-  - upgrade: 5
-    minLevel: 1

@@ -17,6 +17,9 @@ public class UpgradeDefinition : ScriptableObject
     [SerializeField] private UpgradeLevel[] _levels;
     public int MaxLevel => _levels.Length;
 
+    [SerializeField] private UpgradeRequirement[] _requirements;
+    public UpgradeRequirement[] Requirements => _requirements;
+
 
     // METHODS
     public UpgradeLevel GetLevel(int level)

@@ -29,18 +29,37 @@
 - [x] Add donut enemy sprites
 - [x] Add move spd upgrade
 - [x] Add hit feedback (small knockback + white blink)
-- [ ] Add popup after run is over: 
-    - Show calories spent to currency conversion 
-    - Maybe show other stats like total run time and enemies killed
-- [ ] Add proper skill tree
-- [ ] Add skills/buffs (if any)
-- [ ] Implement actual visual elements
-- [ ] Add more food types
-- [ ] Add weight during runs (move spd based on it)?
 
 ## 25/07 - Saturday
+- [x] Add proper skill tree
+- [ ] Add upgrades to the game:
+	- [x] Move speed
+	- [x] Weapon damage
+	- [x] Weapon range
+	- [x] Attack cooldown reduction
+	- [x] Double currency chance
+	- [x] Energy per run
+	- [x] Energy recovery on healthy food kill
+	- [x] Currency per healthy food
+	- [x] Currency per junk food
+	- [ ] Starting food quantity
+	- [ ] Food spawn per second
+	- [ ] Food spawn on kill chance
+	- [ ] Extra food spawn chance
+- [x] Add healthy foods can be eaten on collision behaviour
+- [ ] Add starting food number spawn (healthy foods)
+- [ ] Swap "satiety" with "energy" -> junk food don't recover energy on kill
+- [ ] Add more food types
 - [ ] Polish visuals
 - [ ] Playtesting & bugfixing
+- [ ] Fix tiling
 
 ## 26/07 - Sunday
 - [ ] Playtesting & bugfixing
+
+# POST-JAM IDEAS
+- [ ] Add popup after run is over: 
+    - Show calories spent to currency conversion 
+    - Maybe show other stats like total run time and enemies killed
+- [ ] Add weight during runs (move spd based on it)?
+- [ ] Add skills/buffs (if any)

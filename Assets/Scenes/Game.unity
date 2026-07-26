@@ -364,7 +364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &55672441
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1050,6 +1050,7 @@ GameObject:
   - component: {fileID: 553144363}
   - component: {fileID: 553144361}
   - component: {fileID: 553144362}
+  - component: {fileID: 553144364}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -1121,7 +1122,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1142,7 +1143,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -100
+  m_SortingOrder: -10
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -1166,6 +1167,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1616104251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553144364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553144360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a71bcac8ef0c64d8aa0c94034c56a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrassField
+  _tilemap: {fileID: 553144361}
+  _grassSprites:
+  - {fileID: -2281647678458052734, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
+  - {fileID: -1184675675, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
+  - {fileID: -1422693297, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
+  - {fileID: 1652197259, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
+  - {fileID: 761071658, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
+  - {fileID: 310478225, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
+  - {fileID: -818082608, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
+  - {fileID: 480501895, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
+  - {fileID: -1943435280, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
+  _size: {x: 100, y: 100}
+  _seed: 12345
+  _emptySprite: {fileID: 1063212648, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
+  _decoratedChance: 0.15
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,64 +1429,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674267855}
   m_CullTransparentMesh: 1
---- !u!1 &876626496
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 876626498}
-  - component: {fileID: 876626497}
-  m_Layer: 0
-  m_Name: GrassField
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &876626497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876626496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a71bcac8ef0c64d8aa0c94034c56a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GrassField
-  _tilemap: {fileID: 553144361}
-  _grassSprites:
-  - {fileID: -2281647678458052734, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
-  - {fileID: 1182377344, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
-  - {fileID: -1226193535, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
-  - {fileID: -1361275322, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
-  - {fileID: 1481063981, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
-  - {fileID: -582279062, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
-  - {fileID: -2081337537, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
-  - {fileID: -1302364523, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
-  - {fileID: 1872865645, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
-  - {fileID: 1102931898, guid: f15a74411f52ba541b03ce2729975d5a, type: 3}
-  _size: {x: 100, y: 100}
-  _seed: 12345
---- !u!4 &876626498
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876626496}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 387.45517, y: 354.2639, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2024079001}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &972673301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,7 +2381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2294366bea47fd4199c0e35eb5fa4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  _moveSpeed: 5
+  _baseMoveSpeed: 5
 --- !u!50 &1669996493
 Rigidbody2D:
   serializedVersion: 5
@@ -2999,7 +2969,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1616104251}
-  - {fileID: 876626498}
   m_Father: {fileID: 1971192185}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
