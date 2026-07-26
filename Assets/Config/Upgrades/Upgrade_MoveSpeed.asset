@@ -17,16 +17,16 @@ MonoBehaviour:
   _icon: {fileID: -1048058334, guid: 4ee17662a40a4b84c98e11001aba45b0, type: 3}
   _levels:
   - cost: 0
-    value: 1
+    value: 5
     description: Base movement speed
   - cost: 200
-    value: 2
+    value: 6
     description: Increases your movement speed
   - cost: 500
-    value: 3
+    value: 7
     description: Increases your movement speed
   - cost: 1000
-    value: 4
+    value: 8
     description: Increases your movement speed
   _requirements: []
   _baseValue: 0

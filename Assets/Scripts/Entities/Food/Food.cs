@@ -31,6 +31,8 @@ public abstract class Food : MonoBehaviour
 
     public float DoubleCurrencyChance => UpgradeSystem.Instance.GetValue(UpgradeId.DoubleCurrencyChance);
 
+    private Vector2 Bounds => ConfigRegistry.Instance.Spawn.WorldHalfExtents;
+
 
     // METHODS
     protected virtual void Awake()
@@ -56,8 +58,11 @@ public abstract class Food : MonoBehaviour
 
         Vector2 direction = GetMovementDirection();
         Vector2 delta = direction * _moveSpeed + _knockbackVelocity;
-
-        _rigidBody.MovePosition(_rigidBody.position + delta * Time.fixedDeltaTime);
+        Vector2 next = _rigidBody.position + delta * Time.fixedDeltaTime;
+        Vector2 bounds = Bounds;
+        next.x = Mathf.Clamp(next.x, -bounds.x, bounds.x);
+        next.y = Mathf.Clamp(next.y, -bounds.y, bounds.y); 
+        _rigidBody.MovePosition(next);
 
         _knockbackVelocity = Vector2.MoveTowards(
             _knockbackVelocity, Vector2.zero, _knockbackDecay * Time.fixedDeltaTime);
@@ -106,7 +111,9 @@ public abstract class Food : MonoBehaviour
         spriteRenderer.color = deathColor;
         yield return new WaitForSeconds(deathDuration);
 
-        GameTimer.Instance.AddTime(TimeReward);
+        if (TimeReward != 0f)
+            GameTimer.Instance.AddTime(TimeReward);
+
         GameData.Instance.AddCurrency(currency);
         FoodSpawner.Instance?.NotifyFoodKilled(this);
 
