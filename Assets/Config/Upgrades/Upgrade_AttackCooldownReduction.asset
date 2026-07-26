@@ -13,15 +13,22 @@ MonoBehaviour:
   m_Name: Upgrade_AttackCooldownReduction
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
   _id: 3
-  _displayName: Healthy Food Spawn
-  _icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  _displayName: Cooldown
+  _icon: {fileID: 2064958543, guid: 4ee17662a40a4b84c98e11001aba45b0, type: 3}
   _levels:
-  - cost: 100
+  - cost: 0
     value: 1
-    description: Level 1
+    description: Base attack speed
   - cost: 300
-    value: 2
-    description: Level 2
+    value: 0.8
+    description: Increases your attack speed
   - cost: 500
-    value: 3
-    description: Level 3
+    value: 0.5
+    description: Increases your attack speed
+  - cost: 500
+    value: 0.3
+    description: Increases your attack speed
+  _requirements:
+  - upgrade: 1
+    minLevel: 1
+  _baseValue: 0

@@ -14,11 +14,11 @@ public abstract class Food : MonoBehaviour
     public bool isDying;
 
     [Header("Basic Properties")]
-    [SerializeField] protected int _health = 1;
-    public int Health => _health;
+    [SerializeField] protected float _health = 1;
+    public float Health => _health;
     [SerializeField] protected float _moveSpeed = 3f;
     public float MoveSpeed => _moveSpeed;
-    protected abstract int CurrencyReward { get; }
+    protected abstract float CurrencyReward { get; }
     protected abstract float TimeReward { get; }
 
     [Header("Hit Feedback")]
@@ -73,7 +73,7 @@ public abstract class Food : MonoBehaviour
         return DirectionToTarget();
     }
 
-    public virtual void OnHitByWeapon(int damage, Vector2 hitSource)
+    public virtual void OnHitByWeapon(float damage, Vector2 hitSource)
     {
         if (isDying)
             return;
@@ -94,7 +94,7 @@ public abstract class Food : MonoBehaviour
     {
         isDying = true;
 
-        int currency = RollCurrencyReward();
+        float currency = RollCurrencyReward();
 
         Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)
@@ -139,9 +139,9 @@ public abstract class Food : MonoBehaviour
         _flashRoutine = null;
     }
 
-    protected int RollCurrencyReward()
+    protected float RollCurrencyReward()
     {
-        int reward = CurrencyReward;
+        float reward = CurrencyReward;
 
         if (Chance.Roll(DoubleCurrencyChance))
             reward *= 2;

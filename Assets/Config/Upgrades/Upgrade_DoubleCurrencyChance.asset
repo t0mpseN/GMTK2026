@@ -12,16 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8822c3c3d39425418866da9c2c90793, type: 3}
   m_Name: Upgrade_DoubleCurrencyChance
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
-  _id: 5
-  _displayName: Move Speed
-  _icon: {fileID: 21300000, guid: 03de1fa2b67181c4a9fc3eed43ebe0dd, type: 3}
+  _id: 4
+  _displayName: Lucky
+  _icon: {fileID: -1104774182, guid: 4ee17662a40a4b84c98e11001aba45b0, type: 3}
   _levels:
+  - cost: 0
+    value: 0
+    description: Base chance to burn double calories
   - cost: 300
-    value: 1
-    description: Level 1
+    value: 0.1
+    description: Increases the chance to burn double calories
   - cost: 600
-    value: 2
-    description: Level 2
+    value: 0.2
+    description: Increases the chance to burn double calories
   - cost: 1000
-    value: 3
-    description: Level 3
+    value: 0.3
+    description: Increases the chance to burn double calories
+  _requirements:
+  - upgrade: 1
+    minLevel: 1
+  _baseValue: 0

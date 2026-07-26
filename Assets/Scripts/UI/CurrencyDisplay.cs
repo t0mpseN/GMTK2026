@@ -27,7 +27,7 @@ public class CurrencyText : MonoBehaviour
             GameData.Instance.OnCurrencyChanged -= UpdateLabel;
     }
 
-    private void UpdateLabel(int value)
+    private void UpdateLabel(float value)
     {
         _label.text = string.Format(_format, value);
     }

@@ -9,11 +9,21 @@ public class UpgradeTooltip : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _titleText;
     [SerializeField] private TextMeshProUGUI _descriptionText;
     [SerializeField] private TextMeshProUGUI _costText;
+    [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private float _verticalGap = 15f;
 
     private void Awake()
     {
         Instance = this;
+
+        if (_root == null || _titleText == null || _descriptionText == null
+            || _costText == null || _levelText == null)
+        {
+            Debug.LogError($"{name}: referências da tooltip não atribuídas.", this);
+            enabled = false;
+            return;
+        }
+
         Hide();
     }
 
@@ -23,19 +33,26 @@ public class UpgradeTooltip : MonoBehaviour
         bool maxed = UpgradeSystem.Instance.IsMaxed(definition.Id);
         bool locked = !UpgradeSystem.Instance.ArePrerequisitesMet(definition.Id);
 
-        _titleText.text = $"{definition.DisplayName}";
+        _titleText.text = definition.DisplayName;
+        _levelText.text = $"Lvl {level}";
 
-        UpgradeLevel next = definition.GetLevel(level + 1);
-        _descriptionText.text = next != null && !string.IsNullOrEmpty(next.description)
-            ? next.description
-            : string.Empty;
-
-        if (locked)
-            _costText.text = "LOCKED";
-        else if (maxed)
+        if (maxed)
+        {
+            _levelText.text = "MAX";
             _costText.text = "MAX";
+
+            UpgradeLevel current = definition.GetLevel(level);
+            _descriptionText.text = current?.description ?? string.Empty;
+        }
         else
-            _costText.text = $"{UpgradeSystem.Instance.GetNextLevelCost(definition.Id)} $";
+        {
+            int nextLevel = level + 1;
+            UpgradeLevel next = definition.GetLevel(nextLevel);
+
+            _levelText.text = $"Lvl {nextLevel}";
+            _costText.text = $"{next.cost} $";
+            _descriptionText.text = next.description ?? string.Empty;
+        }
 
         float halfHeight = anchor.rect.height * 0.5f * anchor.lossyScale.y;
         bool fitsAbove = anchor.position.y + halfHeight + _verticalGap + _root.rect.height * _root.lossyScale.y < Screen.height;

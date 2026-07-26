@@ -3,7 +3,9 @@ using UnityEngine;
 public class UpgradeTreePanel : MonoBehaviour
 {
     [SerializeField] private GameObject _root;
+    [SerializeField] private bool _refundOnReset = true;
     private UpgradeNode[] _nodes;
+    [SerializeField] private UpgradeTreeArrows _arrows;
 
     private void Awake()
     {
@@ -29,15 +31,27 @@ public class UpgradeTreePanel : MonoBehaviour
             GameData.Instance.OnCurrencyChanged -= HandleCurrencyChanged;
     }
 
-    public void Open() => _root.SetActive(true);
+    public void Open()
+    {
+        _root.SetActive(true);
+        RefreshAll();
+    }
+
     public void Close() => _root.SetActive(false);
+
+    public void OnResetPressed()
+    {
+        UpgradeSystem.Instance.ResetUpgrades(_refundOnReset);
+    }
 
     private void RefreshAll()
     {
         foreach (UpgradeNode node in _nodes)
             node.Refresh();
+
+        _arrows?.Refresh();
     }
 
     private void HandleChanged(UpgradeId id, int level) => RefreshAll();
-    private void HandleCurrencyChanged(int currency) => RefreshAll();
+    private void HandleCurrencyChanged(float currency) => RefreshAll();
 }

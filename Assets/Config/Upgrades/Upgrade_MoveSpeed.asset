@@ -13,18 +13,20 @@ MonoBehaviour:
   m_Name: Upgrade_MoveSpeed
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
   _id: 0
-  _displayName: Move Speed
-  _icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  _displayName: Leg Day
+  _icon: {fileID: -1048058334, guid: 4ee17662a40a4b84c98e11001aba45b0, type: 3}
   _levels:
-  - cost: 100
-    value: 2
-    description: Level 1
+  - cost: 0
+    value: 1
+    description: Base movement speed
   - cost: 200
-    value: 5
-    description: Level 2
+    value: 2
+    description: Increases your movement speed
   - cost: 500
-    value: 8
-    description: Level 3
-  _requirements:
-  - upgrade: 5
-    minLevel: 1
+    value: 3
+    description: Increases your movement speed
+  - cost: 1000
+    value: 4
+    description: Increases your movement speed
+  _requirements: []
+  _baseValue: 0

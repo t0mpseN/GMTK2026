@@ -5,11 +5,12 @@ public class SpawnConfig : ScriptableObject
 {
     // FIELDS & PROPERTIES
     [SerializeField] private float _spawnAreaPadding = 0.1f;
-    public float SpawnAreaPadding => _spawnAreaPadding;
-
     [SerializeField] private float _minDistanceFromPlayer = 3f;
-    public float MinDistanceFromPlayer => _minDistanceFromPlayer;
-
     [SerializeField] private int _maxPlacementAttempts = 15;
+    [Min(0.05f)] private float _tickInterval = 0.1f;
+
+    public float SpawnAreaPadding => _spawnAreaPadding;
+    public float MinDistanceFromPlayer => _minDistanceFromPlayer;
     public int MaxPlacementAttempts => _maxPlacementAttempts;
+    public float TickInterval => _tickInterval;
 }

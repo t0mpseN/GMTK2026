@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -14,7 +13,6 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     [SerializeField] private RectTransform _iconTransform;
     [SerializeField] private Image _iconImage;
     [SerializeField] private Image _frameImage;
-    [SerializeField] private TextMeshProUGUI _levelText;
 
     [Header("Hover Flair")]
     [SerializeField] private float _hoverScale = 1.15f;
@@ -47,27 +45,20 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void Refresh()
     {
-        if (_definition == null) 
-            return;
+        if (_definition == null) return;
+        if (UpgradeSystem.Instance == null || GameData.Instance == null) return;
 
         int level = UpgradeSystem.Instance.GetLevel(_definition.Id);
         bool locked = !UpgradeSystem.Instance.ArePrerequisitesMet(_definition.Id);
         bool maxed = UpgradeSystem.Instance.IsMaxed(_definition.Id);
 
-        if (_levelText != null)
-        {
-            _levelText.text = $"Lvl {level}";
-            if (level == _definition.MaxLevel)
-                _levelText.text = "MAX";
-        }
-
         Color stateColor = locked ? _lockedColor : maxed ? _maxedColor : _availableColor;
 
-        if (_frameImage != null)
+        if (_frameImage != null) 
             _frameImage.color = stateColor;
 
         if (_iconImage != null)
-            _iconImage.color = locked ? _lockedColor : Color.white;
+            _iconImage.color = stateColor;
     }
 
     private void Update()
@@ -87,6 +78,9 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (_definition == null) return;
+        if (!UpgradeSystem.Instance.ArePrerequisitesMet(_definition.Id)) return;
+
         _isHovered = true;
         UpgradeTooltip.Instance?.Show(_definition, _rectTransform);
     }

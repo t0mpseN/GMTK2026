@@ -13,12 +13,25 @@ MonoBehaviour:
   m_Name: Upgrade_WeaponDamage
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
   _id: 1
-  _displayName: Attack Range
-  _icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  _displayName: Strength Training
+  _icon: {fileID: -1249774424, guid: 4ee17662a40a4b84c98e11001aba45b0, type: 3}
   _levels:
+  - cost: 0
+    value: 0
+    description: Level 1
   - cost: 300
     value: 1
-    description: Level 1
+    description: Be able to defend yourself from junk food!
   - cost: 600
-    value: 1
-    description: Level 2
+    value: 2
+    description: Increases your damage
+  - cost: 1000
+    value: 3
+    description: Increases your damage
+  - cost: 1500
+    value: 4
+    description: Increases your damage
+  _requirements:
+  - upgrade: 0
+    minLevel: 1
+  _baseValue: 0

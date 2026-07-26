@@ -4,8 +4,8 @@ using UnityEngine;
 public class HealthyFood : Food
 {
     // FIELDS & PROPERTIES
-    protected override int CurrencyReward => ConfigRegistry.Instance.Economy.CurrencyPerHealthyFood + (int)UpgradeSystem.Instance.GetValue(UpgradeId.CurrencyPerHealthyFood);
-    protected override float TimeReward => ConfigRegistry.Instance.Economy.TimeBonusPerHealthyFood + (int)UpgradeSystem.Instance.GetValue(UpgradeId.EnergyRecoveryOnHealthyFoodKill);
+    protected override float CurrencyReward => ConfigRegistry.Instance.Economy.CurrencyPerHealthyFood + UpgradeSystem.Instance.GetValue(UpgradeId.CurrencyPerHealthyFood);
+    protected override float TimeReward => ConfigRegistry.Instance.Economy.TimeBonusPerHealthyFood + UpgradeSystem.Instance.GetValue(UpgradeId.EnergyRecoveryOnHealthyFoodKill);
     [SerializeField] private float _fleeDetectionRadius = 5f;
 
 
@@ -24,7 +24,7 @@ public class HealthyFood : Food
 
     protected override IEnumerator OnEatenByPlayer()
     {
-        int currency = RollCurrencyReward();
+        float currency = RollCurrencyReward();
 
         spriteRenderer.color = deathColor;
         yield return new WaitForSeconds(deathDuration);

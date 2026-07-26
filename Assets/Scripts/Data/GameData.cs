@@ -9,7 +9,7 @@ public class GameData : MonoBehaviour
 
 
     // EVENTS
-    public event Action<int> OnCurrencyChanged;
+    public event Action<float> OnCurrencyChanged;
 
 
     // METHODS
@@ -37,13 +37,13 @@ public class GameData : MonoBehaviour
         Data = SaveSystem.Load();
     }
 
-    public void AddCurrency(int amount)
+    public void AddCurrency(float amount)
     {
         Data.currency += amount;
         OnCurrencyChanged?.Invoke(Data.currency);
     }
 
-    public void RemoveCurrency(int amount)
+    public void RemoveCurrency(float amount)
     {
         Data.currency -= amount;
 
@@ -53,7 +53,7 @@ public class GameData : MonoBehaviour
         OnCurrencyChanged?.Invoke(Data.currency);
     }
 
-    public bool TrySpendCurrency(int amount)
+    public bool TrySpendCurrency(float amount)
     {
         if (Data.currency < amount)
             return false;

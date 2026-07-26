@@ -3,7 +3,7 @@ public enum UpgradeId
     MoveSpeed,
     WeaponDamage,
     WeaponRange,
-    AttackCooldownReduction,
+    AttackCooldown,
     DoubleCurrencyChance,
     EnergyPerRun,
     EnergyRecoveryOnHealthyFoodKill,

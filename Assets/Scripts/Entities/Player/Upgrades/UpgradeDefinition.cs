@@ -15,25 +15,24 @@ public class UpgradeDefinition : ScriptableObject
 
     [Tooltip("Index 0 = Level 1. Array size defines max upgrade level")]
     [SerializeField] private UpgradeLevel[] _levels;
-    public int MaxLevel => _levels.Length;
+    public int MaxLevel => Mathf.Max(0, _levels.Length - 1);
 
     [SerializeField] private UpgradeRequirement[] _requirements;
     public UpgradeRequirement[] Requirements => _requirements;
+
+    [SerializeField] private float _baseValue;
 
 
     // METHODS
     public UpgradeLevel GetLevel(int level)
     {
-        if (level < 1 || level > _levels.Length)
-            return null;
-
-        return _levels[level - 1];
+        if (level < 0 || level >= _levels.Length) return null;
+        return _levels[level];
     }
 
     public float GetValueAtLevel(int level)
     {
         UpgradeLevel data = GetLevel(level);
-
         return data != null ? data.value : 0f;
     }
 }

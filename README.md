@@ -47,8 +47,9 @@
 	- [ ] Food spawn on kill chance
 	- [ ] Extra food spawn chance
 - [x] Add healthy foods can be eaten on collision behaviour
-- [ ] Add starting food number spawn (healthy foods)
+- [x] Add starting food number spawn (healthy foods)
 - [ ] Swap "satiety" with "energy" -> junk food don't recover energy on kill
+- [ ] Add wall (limit world area)
 - [ ] Add more food types
 - [ ] Polish visuals
 - [ ] Playtesting & bugfixing

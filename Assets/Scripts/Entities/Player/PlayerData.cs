@@ -5,20 +5,18 @@ using System.Collections.Generic;
 public class PlayerData
 {
     // FIELDS
-    public int currency;
+    public float currency;
     public List<UpgradeProgress> upgrades = new List<UpgradeProgress>();
-    
-    
+    public const int BaseLevel = 0;
+
     // METHODS
     public int GetUpgradeLevel(UpgradeId id)
     {
         foreach (UpgradeProgress upgrade in upgrades)
-        {
             if (upgrade.id == id)
                 return upgrade.level;
-        }
 
-        return 0;
+        return BaseLevel;
     }
 
     public void SetUpgradeLevel(UpgradeId id, int level)
@@ -38,5 +36,15 @@ public class PlayerData
     public void ClearUpgrades()
     {
         upgrades.Clear();
+    }
+
+    public int GetTotalUpgradeLevels()
+    {
+        int total = 0;
+
+        foreach (UpgradeProgress upgrade in upgrades)
+            total += upgrade.level - BaseLevel;   
+
+        return total;
     }
 }

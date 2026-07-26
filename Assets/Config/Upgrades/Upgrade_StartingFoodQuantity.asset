@@ -12,16 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8822c3c3d39425418866da9c2c90793, type: 3}
   m_Name: Upgrade_StartingFoodQuantity
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDefinition
-  _id: 2
-  _displayName: Time Per Run
-  _icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  _id: 9
+  _displayName: Food Quantity
+  _icon: {fileID: 1843022278, guid: 4ee17662a40a4b84c98e11001aba45b0, type: 3}
   _levels:
+  - cost: 0
+    value: 10
+    description: Base amount of food at the start of the run
   - cost: 300
     value: 15
-    description: Level 1
+    description: Increases the amount of food at the start of the run
   - cost: 600
-    value: 30
-    description: Level 2
+    value: 20
+    description: Increases the amount of food at the start of the run
   - cost: 1000
-    value: 60
-    description: Level 3
+    value: 30
+    description: Increases the amount of food at the start of the run
+  _requirements:
+  - upgrade: 0
+    minLevel: 1
+  _baseValue: 0

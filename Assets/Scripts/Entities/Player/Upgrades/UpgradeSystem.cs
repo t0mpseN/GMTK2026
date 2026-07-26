@@ -5,9 +5,11 @@ public class UpgradeSystem : MonoBehaviour
 {
     // FIELDS & PROPERTIES
     public static UpgradeSystem Instance { get; private set; }
+
     [SerializeField] private UpgradeCatalog _catalog;
     public UpgradeCatalog Catalog => _catalog;
 
+    public int TotalUpgradeLevels => GameData.Instance.Data.GetTotalUpgradeLevels();
 
     // EVENTS 
     public event Action<UpgradeId, int> OnUpgradePurchased;
@@ -35,7 +37,12 @@ public class UpgradeSystem : MonoBehaviour
     public bool IsMaxed(UpgradeId id)
     {
         UpgradeDefinition upgrade = _catalog.Get(id);
-        return upgrade != null && GetLevel(id) >= upgrade.MaxLevel; 
+        if (upgrade == null) return false;
+
+        if (upgrade.MaxLevel == 0)
+            return false;
+
+        return GetLevel(id) >= upgrade.MaxLevel;
     }
 
     public int GetNextLevelCost(UpgradeId id)
@@ -87,7 +94,7 @@ public class UpgradeSystem : MonoBehaviour
     {
         if (refundCurrency)
         {
-            int refund = CalculateTotalSpent();   // ANTES de limpar
+            int refund = CalculateTotalSpent();
             GameData.Instance.AddCurrency(refund);
         }
 
@@ -106,7 +113,8 @@ public class UpgradeSystem : MonoBehaviour
             if (definition == null) continue;
 
             int level = GetLevel(definition.Id);
-            for (int i = 1; i <= level; i++)
+
+            for (int i = 1; i <= level; i++) 
             {
                 UpgradeLevel data = definition.GetLevel(i);
                 if (data != null) total += data.cost;
