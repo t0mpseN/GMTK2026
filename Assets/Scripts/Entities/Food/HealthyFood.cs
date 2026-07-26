@@ -4,8 +4,8 @@ using UnityEngine;
 public class HealthyFood : Food
 {
     // FIELDS & PROPERTIES
-    protected override float CurrencyReward => ConfigRegistry.Instance.Economy.CurrencyPerHealthyFood + UpgradeSystem.Instance.GetValue(UpgradeId.CurrencyPerHealthyFood);
-    protected override float TimeReward => ConfigRegistry.Instance.Economy.TimeBonusPerHealthyFood + UpgradeSystem.Instance.GetValue(UpgradeId.EnergyRecoveryOnHealthyFoodKill);
+    protected override float CurrencyReward => ConfigRegistry.Instance.Economy.CurrencyPerHealthyFood;
+    protected override float TimeReward => ConfigRegistry.Instance.Economy.TimeBonusPerHealthyFood;
     [SerializeField] private float _fleeDetectionRadius = 5f;
 
 

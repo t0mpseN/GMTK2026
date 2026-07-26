@@ -4,8 +4,7 @@ using UnityEngine;
 public class JunkFood : Food
 {
     // FIELDS & PROPERTIES
-    protected override float CurrencyReward => ConfigRegistry.Instance.Economy.CurrencyPerJunkFood 
-        + UpgradeSystem.Instance.GetValue(UpgradeId.CurrencyPerJunkFood);
+    protected override float CurrencyReward => ConfigRegistry.Instance.Economy.CurrencyPerJunkFood;
     protected override float TimeReward => ConfigRegistry.Instance.Economy.TimeBonusPerJunkFood;
 
 
