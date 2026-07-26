@@ -12,8 +12,7 @@ public class FoodSpawner : MonoBehaviour
     private SpawnConfig Config => ConfigRegistry.Instance.Spawn;
     private Camera _camera;
 
-    private float TickInterval => Config.TickInterval;
-    private float SpawnRateBonus => UpgradeSystem.Instance.GetValue(UpgradeId.FoodSpawnPerSecond);
+    private float SpawnsPerSecond => UpgradeSystem.Instance.GetValue(UpgradeId.FoodSpawnPerSecond);
     private int StartingFoodQuantity => Mathf.RoundToInt(UpgradeSystem.Instance.GetValue(UpgradeId.StartingFoodQuantity));
     private float SpawnOnKillChance => UpgradeSystem.Instance.GetValue(UpgradeId.FoodSpawnOnKillChance);
     private float ExtraSpawnChance => UpgradeSystem.Instance.GetValue(UpgradeId.ExtraFoodSpawnChance);
@@ -37,7 +36,7 @@ public class FoodSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(GetEffectiveTickInterval());
+            yield return new WaitForSeconds(GetTickInterval());
 
             foreach (SpawnEntry entry in _spawnEntries)
             {
@@ -60,14 +59,6 @@ public class FoodSpawner : MonoBehaviour
     private float GetEffectiveChance(SpawnEntry entry)
     {
         return entry.SpawnChance + entry.ChancePerUpgradeLevel * TotalUpgradeLevels;
-    }
-
-    private float GetEffectiveTickInterval()
-    {
-        float baseRate = 1f / TickInterval;
-        float totalRate = baseRate + SpawnRateBonus;
-
-        return 1f / Mathf.Max(totalRate, 0.01f);
     }
 
     private void SpawnInitialBurst()
@@ -112,21 +103,16 @@ public class FoodSpawner : MonoBehaviour
         if (!Chance.Roll(SpawnOnKillChance))
             return;
 
-        SpawnEntry entry = FindEntryFor(killed);
-        if (entry == null)
-            return;
-
-        entry.Alive.RemoveAll(food => food == null);
-        TrySpawn(entry);
+        SpawnEntry entry = FindHealthyEntry();
+        if (entry != null)
+            TrySpawn(entry);
     }
 
-    private SpawnEntry FindEntryFor(Food food)
+    private SpawnEntry FindHealthyEntry()
     {
         foreach (SpawnEntry entry in _spawnEntries)
-        {
-            if (entry.Prefab != null && entry.Prefab.GetType() == food.GetType())
+            if (entry.Prefab is HealthyFood)
                 return entry;
-        }
 
         return null;
     }
@@ -169,5 +155,10 @@ public class FoodSpawner : MonoBehaviour
         }
 
         return false;
+    }
+
+    private float GetTickInterval()
+    {
+        return 1f / Mathf.Max(SpawnsPerSecond, 0.01f);
     }
 }

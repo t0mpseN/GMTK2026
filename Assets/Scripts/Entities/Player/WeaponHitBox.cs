@@ -23,12 +23,12 @@ public class WeaponHitBox : MonoBehaviour
     private bool _isAttacking;
     public bool IsAttacking => _isAttacking;
 
-    private float RangeScale => 1f + UpgradeSystem.Instance.GetValue(UpgradeId.WeaponRange);
-    private float ForwardRadius => Config.BaseForwardRadius * RangeScale;
-    private float LateralRadius => Config.BaseLateralRadius * RangeScale;
-    protected virtual float AttackDamage => Config.BaseDamage + UpgradeSystem.Instance.GetValue(UpgradeId.WeaponDamage);
-    protected virtual float AttackDuration => Config.BaseAttackDuration;
-    protected virtual float AttackCooldown => Config.BaseAttackCooldown - UpgradeSystem.Instance.GetValue(UpgradeId.AttackCooldown);
+    private float RangeScale => UpgradeSystem.Instance.GetValue(UpgradeId.WeaponRange);
+    private float ForwardRadius => Config.ForwardRadius * RangeScale;
+    private float LateralRadius => Config.LateralRadius * RangeScale;
+    protected virtual float AttackDamage => Config.Damage;
+    protected virtual float AttackDuration => Config.AttackDuration;
+    protected virtual float AttackCooldown => Config.AttackCooldown;
 
 
     // METHODS
@@ -60,6 +60,9 @@ public class WeaponHitBox : MonoBehaviour
 
     private void OnAttackPerformed(InputAction.CallbackContext context)
     {
+        if (AttackDamage <= 0f)
+            return;
+
         if (_isAttacking)
             return;
 

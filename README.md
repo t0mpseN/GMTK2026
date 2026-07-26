@@ -49,7 +49,10 @@
 - [x] Add healthy foods can be eaten on collision behaviour
 - [x] Add starting food number spawn (healthy foods)
 - [ ] Swap "satiety" with "energy" -> junk food don't recover energy on kill
+- [ ] Add food spawning progression (start with only healthy foods)
+- [ ] Add food sprites
 - [ ] Add wall (limit world area)
+- [ ] Improve food hitboxes
 - [ ] Add more food types
 - [ ] Polish visuals
 - [ ] Playtesting & bugfixing

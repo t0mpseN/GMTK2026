@@ -15,6 +15,6 @@ public class SpawnEntry
     [Tooltip("Additional spawn chance per player's upgrade level.")]
     public float ChancePerUpgradeLevel = 0f;
 
-    [Min(1)] public int MaxAliveCount = 10;
+    [Min(1)] public int MaxAliveCount = 50;
     [HideInInspector] public List<Food> Alive = new List<Food>();
 }

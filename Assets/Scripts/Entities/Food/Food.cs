@@ -107,7 +107,9 @@ public abstract class Food : MonoBehaviour
         yield return new WaitForSeconds(deathDuration);
 
         GameTimer.Instance.AddTime(TimeReward);
-        GameData.Instance.AddCurrency(currency); 
+        GameData.Instance.AddCurrency(currency);
+        FoodSpawner.Instance?.NotifyFoodKilled(this);
+
         Destroy(gameObject);
     }
 

@@ -24,11 +24,18 @@ public class HealthyFood : Food
 
     protected override IEnumerator OnEatenByPlayer()
     {
+        isDying = true;
+
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null)
+            collider.enabled = false;
+
         float currency = RollCurrencyReward();
 
         spriteRenderer.color = deathColor;
         yield return new WaitForSeconds(deathDuration);
 
+        FoodSpawner.Instance?.NotifyFoodKilled(this);
         GameTimer.Instance.AddTime(TimeReward);
         GameData.Instance.AddCurrency(currency);
 
