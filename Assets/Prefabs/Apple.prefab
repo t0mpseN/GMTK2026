@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 6539502672949636321}
   - component: {fileID: 1537448634594897736}
   - component: {fileID: -279317537883928119}
+  - component: {fileID: 5793370750972620745}
   m_Layer: 9
-  m_Name: HealthyFood
+  m_Name: Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,8 +48,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d93488e2394794ebdfe3fc0ac77b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthyFood
+  spriteRenderer: {fileID: 0}
+  isDying: 0
   _health: 1
   _moveSpeed: 3
+  _knockbackForce: 5
+  _knockbackDecay: 25
+  _flashDuration: 0.08
+  _flashColor: {r: 3, g: 3, b: 3, a: 1}
+  deathDuration: 0.3
+  deathColor: {r: 3, g: 0.25, b: 0.25, a: 1}
   _fleeDetectionRadius: 3
 --- !u!212 &6539502672949636321
 SpriteRenderer:
@@ -99,7 +108,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2729000475568545578, guid: 67e423ae965c3264b82d4547c68337a6, type: 3}
+  m_Sprite: {fileID: -7832214784768987486, guid: daa83951225c6ec42843e3668b6a86b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -175,7 +184,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4, y: 1.55}
+    oldSize: {x: 0.90625, y: 1.09375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -183,3 +192,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &5793370750972620745
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3343590880482292690}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e59f8257f7323c74c94704dbe55c35fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
