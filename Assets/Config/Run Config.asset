@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85c0f4755c07d04d80b240cebb152d8, type: 3}
   m_Name: Run Config
   m_EditorClassIdentifier: Assembly-CSharp::RunConfig
-  _startingTime: 60
-  _maxTime: 60
-  _warningThreshold: 10
+  _warningThreshold: 2

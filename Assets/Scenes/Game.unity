@@ -1271,7 +1271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerDisplay
   _fillImage: {fileID: 972673303}
-  _normalColor: {r: 1, g: 0.11461386, b: 0, a: 1}
+  _normalColor: {r: 1, g: 0.2827691, b: 0, a: 1}
   _warningColor: {r: 0.9607843, g: 0.23137255, b: 0.54509807, a: 1}
   _smoothSpeed: 8
 --- !u!114 &674267858

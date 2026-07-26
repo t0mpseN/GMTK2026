@@ -3638,8 +3638,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   _musicSource: {fileID: 132018262}
   _sfxSource: {fileID: 1055277328}
-  _menuMusic: {fileID: 8300000, guid: d72204cb8992632459c8bfe3fa7e1bff, type: 3}
-  _gameMusic: {fileID: 8300000, guid: d72204cb8992632459c8bfe3fa7e1bff, type: 3}
+  _menuMusic: {fileID: 8300000, guid: f0e4b51c77f4ec04c90ea986088b8d24, type: 3}
+  _gameMusic: {fileID: 8300000, guid: 537401ce58ed30645a78afc310981b05, type: 3}
   _attackClip: {fileID: 8300000, guid: 52728e65f88c6ef4ab78909c61785ff0, type: 3}
   _foodHitClip: {fileID: 8300000, guid: ffe57f5dd8e5204488ce2e879a468354, type: 3}
   _foodEatenClip: {fileID: 8300000, guid: 6b2a4fbcf695bcd478bb91ca818d6c1b, type: 3}

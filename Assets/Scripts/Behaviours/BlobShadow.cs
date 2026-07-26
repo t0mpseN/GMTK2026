@@ -13,6 +13,7 @@ public class BlobShadow : MonoBehaviour
     [SerializeField] private int _segments = 24;
     [SerializeField] private int _sortingOrder = -1;
 
+
     // METHODS
     private void Awake()
     {
