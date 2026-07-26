@@ -51,10 +51,10 @@
 - [x] Swap "satiety" with "energy" -> junk food don't recover energy on kill
 - [x] Add food spawning progression (start with only healthy foods)
 - [x] Add food sprites
-- [ ] Add slash animation
-- [ ] Add burnt calories count on upgrades popup
-- [ ] Add random colors on apples (new prefabs?)
+- [x] Add slash animation
+- [x] Add burnt calories count on upgrades popup
 - [ ] Add wall (limit world area)
+- [ ] Add random colors on apples (new prefabs?)
 - [ ] Improve food hitboxes
 - [ ] Add shadows
 - [ ] Add more food types
