@@ -3636,9 +3636,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5048bfa059c9672478668705cc3a19bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  _musicSource: {fileID: 132018262}
+  _musicSourceA: {fileID: 132018262}
+  _musicSourceB: {fileID: 0}
   _sfxSource: {fileID: 1055277328}
-  _menuMusic: {fileID: 8300000, guid: f0e4b51c77f4ec04c90ea986088b8d24, type: 3}
+  _menuMusic: {fileID: 8300000, guid: c4dc121c78b04e34787fe4cddbdf4a85, type: 3}
   _gameMusic: {fileID: 8300000, guid: 537401ce58ed30645a78afc310981b05, type: 3}
   _attackClip: {fileID: 8300000, guid: 52728e65f88c6ef4ab78909c61785ff0, type: 3}
   _foodHitClip: {fileID: 8300000, guid: ffe57f5dd8e5204488ce2e879a468354, type: 3}
@@ -3646,6 +3647,8 @@ MonoBehaviour:
   _purchaseClip: {fileID: 8300000, guid: d581bb528e26a4e4ea82b6441245e78d, type: 3}
   _deniedClip: {fileID: 8300000, guid: 22fd10ac74e8e564e8c5448b9ccb676c, type: 3}
   _pitchVariation: 0.1
+  _defaultFadeDuration: 1.5
+  _resumeMusicPosition: 1
 --- !u!224 &1404023689 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3014540781586088385, guid: 8ae6dd5768d8dd941816ecc10424f163, type: 3}
