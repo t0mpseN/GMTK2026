@@ -57,9 +57,10 @@
 - [x] Add burnt calories count on upgrades popup
 - [x] Add wall (limit world area)
 - [x] Add sounds & music
-- [ ] Add audio controls
-- [ ] Add junk food eaten penalty property
-- [ ] Add eating animations & improve feedback
+- [x] Add audio controls
+- [x] Add junk food eaten penalty property
+- [x] Add eating animations & improve feedback
+- [ ] Add damage number feedback (+ custom strings when foods are eaten)
 - [ ] Add random colors on apples (new prefabs?)
 - [ ] Improve food hitboxes
 - [ ] Add shadows

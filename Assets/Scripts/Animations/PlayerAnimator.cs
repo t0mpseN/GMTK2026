@@ -6,6 +6,7 @@ public class PlayerAnimator : MonoBehaviour
 {
     // FIELDS & PROPERTIES
     private static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
+    private static readonly int EatHash = Animator.StringToHash("Eat");
 
     private Animator _animator;
     private PlayerMovement _movement;
@@ -20,5 +21,10 @@ public class PlayerAnimator : MonoBehaviour
     private void Update()
     {
         _animator.SetBool(IsMovingHash, _movement.IsMoving);
+    }
+
+    public void PlayEat()
+    {
+        _animator.SetTrigger(EatHash);
     }
 }

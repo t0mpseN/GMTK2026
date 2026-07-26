@@ -22,24 +22,19 @@ public class HealthyFood : Food
         return -DirectionToTarget();
     }
 
-    protected override IEnumerator OnEatenByPlayer()
+    protected override IEnumerator OnEatenByPlayer(Collider2D eater)
     {
-        AudioManager.Instance?.PlaySfx(AudioManager.Instance.FoodEatenClip);
-        isDying = true;
-
-        Collider2D collider = GetComponent<Collider2D>();
-        if (collider != null)
-            collider.enabled = false;
+        BeginEaten(eater);
 
         float currency = RollCurrencyReward();
 
-        spriteRenderer.color = deathColor;
+        //spriteRenderer.color = deathColor;
         yield return new WaitForSeconds(deathDuration);
 
         FoodSpawner.Instance?.NotifyFoodKilled(this);
         GameTimer.Instance.AddTime(TimeReward);
         GameData.Instance.AddCurrency(currency);
 
-        Destroy(gameObject);
+        yield return SuckIntoPlayer(eater.transform);
     }
 }

@@ -51,13 +51,38 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   isDying: 0
   _health: 1
-  _moveSpeed: 3
+  _moveSpeed: 1.8
   _knockbackForce: 5
   _knockbackDecay: 25
   _flashDuration: 0.08
   _flashColor: {r: 3, g: 3, b: 3, a: 1}
   deathDuration: 0.3
   deathColor: {r: 3, g: 0.25, b: 0.25, a: 1}
+  _suckDuration: 0.25
+  _suckCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _fleeDetectionRadius: 3
 --- !u!212 &6539502672949636321
 SpriteRenderer:

@@ -33,6 +33,9 @@ public abstract class Food : MonoBehaviour
 
     private Vector2 Bounds => ConfigRegistry.Instance.Spawn.WorldHalfExtents;
 
+    [SerializeField] private float _suckDuration = 0.25f;
+    [SerializeField] private AnimationCurve _suckCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+
 
     // METHODS
     protected virtual void Awake()
@@ -122,7 +125,21 @@ public abstract class Food : MonoBehaviour
         Destroy(gameObject);
     }
 
-    protected abstract IEnumerator OnEatenByPlayer();
+    protected abstract IEnumerator OnEatenByPlayer(Collider2D eater);
+
+    protected void BeginEaten(Collider2D eater)
+    {
+        AudioManager.Instance?.PlaySfx(AudioManager.Instance.FoodEatenClip);
+
+        isDying = true;
+
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null)
+            collider.enabled = false;
+
+        PlayerAnimator animator = eater.GetComponentInParent<PlayerAnimator>();
+        animator?.PlayEat();
+    }
 
     private void ApplyKnockback(Vector2 hitSource)
     {
@@ -165,6 +182,28 @@ public abstract class Food : MonoBehaviour
         if (isDying || !collision.CompareTag("Player"))
             return;
 
-        StartCoroutine(OnEatenByPlayer());
+        StartCoroutine(OnEatenByPlayer(collision));
+    }
+
+
+    public IEnumerator SuckIntoPlayer(Transform target)
+    {
+        spriteRenderer.sortingOrder = 1000;
+
+        Vector3 startPos = transform.position;
+        Vector3 startScale = transform.localScale;
+        float elapsed = 0f;
+
+        while (elapsed < _suckDuration)
+        {
+            float t = _suckCurve.Evaluate(elapsed / _suckDuration);
+            transform.position = Vector3.Lerp(startPos, target.position, t);
+            transform.localScale = Vector3.Lerp(startScale, Vector3.zero, t);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        Destroy(gameObject);
     }
 }

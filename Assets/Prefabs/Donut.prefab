@@ -48,8 +48,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565e341e44c5bf144b5454a14388020e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JunkFood
-  _health: 3
-  _moveSpeed: 2
+  spriteRenderer: {fileID: 0}
+  isDying: 0
+  _health: 6
+  _moveSpeed: 1
+  _knockbackForce: 5
+  _knockbackDecay: 25
+  _flashDuration: 0.08
+  _flashColor: {r: 3, g: 3, b: 3, a: 1}
+  deathDuration: 0.3
+  deathColor: {r: 3, g: 0.25, b: 0.25, a: 1}
+  _suckDuration: 0.25
+  _suckCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!212 &1890048435606991345
 SpriteRenderer:
   serializedVersion: 3

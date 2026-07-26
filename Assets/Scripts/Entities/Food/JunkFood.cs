@@ -5,25 +5,21 @@ public class JunkFood : Food
 {
     // FIELDS & PROPERTIES
     protected override float CurrencyReward => ConfigRegistry.Instance.Economy.CurrencyPerJunkFood;
+    private float CurrencyLostPerJunkFoodEaten => ConfigRegistry.Instance.Economy.CurrencyLostPerJunkFoodEaten;
     protected override float TimeReward => 0f;
 
 
     // METHODS
-    protected override IEnumerator OnEatenByPlayer()
+    protected override IEnumerator OnEatenByPlayer(Collider2D eater)
     {
-        AudioManager.Instance?.PlaySfx(AudioManager.Instance.FoodEatenClip);
-        isDying = true;
+        BeginEaten(eater);
 
-        Collider2D collider = GetComponent<Collider2D>();
-        if (collider != null)
-            collider.enabled = false;
-
-        spriteRenderer.color = deathColor;
+        //spriteRenderer.color = deathColor;
         yield return new WaitForSeconds(deathDuration);
 
-        GameData.Instance.RemoveCurrency(CurrencyReward);
+        GameData.Instance.RemoveCurrency(CurrencyLostPerJunkFoodEaten);
         FoodSpawner.Instance?.NotifyFoodKilled(this);
 
-        Destroy(gameObject);
+        yield return SuckIntoPlayer(eater.transform);
     }
 }

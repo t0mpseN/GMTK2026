@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b3d74f77fbd5341b77bfed742b72f8, type: 3}
   m_Name: Economy Config
   m_EditorClassIdentifier: Assembly-CSharp::EconomyConfig
-  _currencyPerJunkFood: 1
-  _currencyPerHealthyFood: 3
-  _timeBonusPerJunkFood: 2
-  _timeBonusPerHealthyFood: 5
+  _timeBonusPerJunkFood: 0
+  _currencyLostPerJunkFoodEaten: 2
