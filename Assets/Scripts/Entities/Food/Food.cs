@@ -36,6 +36,11 @@ public abstract class Food : MonoBehaviour
     [SerializeField] private float _suckDuration = 0.25f;
     [SerializeField] private AnimationCurve _suckCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
 
+    protected abstract string KilledMessage { get; }
+    protected abstract Color KilledMessageColor { get; }
+    [Range(0f, 1f)][SerializeField] private float _flavorTextChance = 0.3f;
+    [SerializeField] private float _textOffset = 0.6f;
+
 
     // METHODS
     protected virtual void Awake()
@@ -84,6 +89,10 @@ public abstract class Food : MonoBehaviour
     public virtual void OnHitByWeapon(float damage, Vector2 hitSource)
     {
         AudioManager.Instance?.PlaySfx(AudioManager.Instance.FoodHitClip);
+        FloatingTextSpawner.Instance?.Spawn(
+            damage.ToString(),
+            transform.position + Vector3.up * _textOffset, 
+            FloatingTextSpawner.Instance.DamageColor);
 
         if (isDying)
             return;
@@ -121,6 +130,10 @@ public abstract class Food : MonoBehaviour
 
         GameData.Instance.AddCurrency(currency);
         FoodSpawner.Instance?.NotifyFoodKilled(this);
+        FloatingTextSpawner.Instance?.Spawn(
+            KilledMessage,
+            transform.position + Vector3.up * _textOffset,
+            KilledMessageColor);
 
         Destroy(gameObject);
     }
@@ -130,7 +143,6 @@ public abstract class Food : MonoBehaviour
     protected void BeginEaten(Collider2D eater)
     {
         AudioManager.Instance?.PlaySfx(AudioManager.Instance.FoodEatenClip);
-
         isDying = true;
 
         Collider2D collider = GetComponent<Collider2D>();
@@ -139,6 +151,8 @@ public abstract class Food : MonoBehaviour
 
         PlayerAnimator animator = eater.GetComponentInParent<PlayerAnimator>();
         animator?.PlayEat();
+        EatenFeedback feedback = GetEatenFeedback();
+        FloatingTextSpawner.Instance?.Spawn(feedback.message, transform.position, feedback.color);
     }
 
     private void ApplyKnockback(Vector2 hitSource)
@@ -206,4 +220,32 @@ public abstract class Food : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    protected struct EatenFeedback
+    {
+        public string message;
+        public Color color;
+    }
+
+    protected EatenFeedback RollEatenFeedback(string[] phrases, string fallback, Color fallbackColor)
+    {
+        if (Chance.Roll(_flavorTextChance) && phrases.Length > 0)
+        {
+            Color color;
+            if (TimeReward > 0f)
+                color = FloatingTextSpawner.Instance.EatenSpecialColor;
+            else
+                color = fallbackColor;
+
+            return new EatenFeedback
+            {
+                message = phrases[Random.Range(0, phrases.Length)],
+                color = color
+            };
+        }
+
+        return new EatenFeedback { message = fallback, color = fallbackColor };
+    }
+
+    protected abstract EatenFeedback GetEatenFeedback();
 }

@@ -7,9 +7,16 @@ public class HealthyFood : Food
     protected override float CurrencyReward => ConfigRegistry.Instance.Economy.CurrencyPerHealthyFood;
     protected override float TimeReward => ConfigRegistry.Instance.Economy.TimeBonusPerHealthyFood;
     [SerializeField] private float _fleeDetectionRadius = 5f;
+    private static readonly string[] HealthyEatenPhrases =
+    {
+        "YUM!", "FRESH!", "CRUNCH", "SO GOOD", "GAINS", "NICE", "*happy*"
+    };
+
+    protected override string KilledMessage => $"+{CurrencyReward:0} kcal";
+    protected override Color KilledMessageColor => FloatingTextSpawner.Instance.CurrencyColor;
 
 
-    // METHODS
+    // METHODS 
     protected override Vector2 GetMovementDirection()
     {
         if (_fleeDetectionRadius > 0f && _target != null)
@@ -37,4 +44,10 @@ public class HealthyFood : Food
 
         yield return SuckIntoPlayer(eater.transform);
     }
+
+    protected override EatenFeedback GetEatenFeedback() =>
+        RollEatenFeedback(
+            HealthyEatenPhrases,
+            $"+{CurrencyReward:0} kcal",
+            FloatingTextSpawner.Instance.CurrencyColor);
 }

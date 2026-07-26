@@ -60,8 +60,13 @@
 - [x] Add audio controls
 - [x] Add junk food eaten penalty property
 - [x] Add eating animations & improve feedback
-- [ ] Add damage number feedback (+ custom strings when foods are eaten)
+- [x] Add damage number feedback (+ custom strings when foods are eaten)
+- [ ] Add credits
+- [ ] Purchasable upgrade buttons should be green 
 - [ ] Add random colors on apples (new prefabs?)
+- [ ] Improve progress bar
+- [x] Improve fonts
+- [ ] Improve main menu
 - [ ] Fix upgrade icons
 - [ ] Add shadows
 - [ ] Improve food hitboxes

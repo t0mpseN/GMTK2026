@@ -7,6 +7,13 @@ public class JunkFood : Food
     protected override float CurrencyReward => ConfigRegistry.Instance.Economy.CurrencyPerJunkFood;
     private float CurrencyLostPerJunkFoodEaten => ConfigRegistry.Instance.Economy.CurrencyLostPerJunkFoodEaten;
     protected override float TimeReward => 0f;
+    private static readonly string[] JunkEatenPhrases =
+    {
+        "YUCK!", "TOO SWEET", "GREASY...", "SO BAD", "MY ARTERIES", "WORTH IT?", "OINK"
+    };
+
+    protected override string KilledMessage => $"+{CurrencyReward:0} kcal";
+    protected override Color KilledMessageColor => FloatingTextSpawner.Instance.CurrencyColor;
 
 
     // METHODS
@@ -22,4 +29,10 @@ public class JunkFood : Food
 
         yield return SuckIntoPlayer(eater.transform);
     }
+
+    protected override EatenFeedback GetEatenFeedback() =>
+        RollEatenFeedback(
+            JunkEatenPhrases,
+            $"-{CurrencyLostPerJunkFoodEaten:0} kcal",
+            FloatingTextSpawner.Instance.PenaltyColor);
 }
