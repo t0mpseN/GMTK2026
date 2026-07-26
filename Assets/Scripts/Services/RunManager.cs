@@ -7,11 +7,12 @@ public class RunManager : MonoBehaviour
     [SerializeField] private string _menuSceneName = "Menu";
 
     [Tooltip("A pause before returning to the menu scene, in seconds.")]
-    [SerializeField] private float _returnToMenuDelay = 1.5f;
+    [SerializeField] private float _returnToMenuDelay = 0f;
 
     private void Start()
     {
         GameTimer.Instance.OnTimeExpired += HandleRunEnded;
+        AudioManager.Instance?.PlayMusic(AudioManager.Instance.GameMusic);
     }
 
     private void OnDestroy()

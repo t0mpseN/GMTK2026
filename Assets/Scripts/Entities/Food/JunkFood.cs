@@ -11,6 +11,7 @@ public class JunkFood : Food
     // METHODS
     protected override IEnumerator OnEatenByPlayer()
     {
+        AudioManager.Instance?.PlaySfx(AudioManager.Instance.FoodEatenClip);
         isDying = true;
 
         Collider2D collider = GetComponent<Collider2D>();

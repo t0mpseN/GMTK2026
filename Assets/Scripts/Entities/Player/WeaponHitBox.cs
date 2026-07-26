@@ -83,6 +83,7 @@ public class WeaponHitBox : MonoBehaviour
     private IEnumerator PerformAttack()
     {
         _isAttacking = true;
+        AudioManager.Instance?.PlaySfx(AudioManager.Instance.AttackClip);
         _lastAttackTime = Time.time;
 
         _attackOrigin = transform.position;

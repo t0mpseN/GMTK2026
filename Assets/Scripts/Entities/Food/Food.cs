@@ -80,6 +80,8 @@ public abstract class Food : MonoBehaviour
 
     public virtual void OnHitByWeapon(float damage, Vector2 hitSource)
     {
+        AudioManager.Instance?.PlaySfx(AudioManager.Instance.FoodHitClip);
+
         if (isDying)
             return;
 

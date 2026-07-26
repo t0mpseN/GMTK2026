@@ -93,7 +93,12 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (UpgradeSystem.Instance.TryPurchase(_definition.Id))
-            UpgradeTooltip.Instance?.Show(_definition, _rectTransform); 
+        bool bought = UpgradeSystem.Instance.TryPurchase(_definition.Id);
+        AudioManager.Instance?.PlaySfx(bought
+            ? AudioManager.Instance.PurchaseClip
+            : AudioManager.Instance.DeniedClip);
+
+        if (bought)
+            UpgradeTooltip.Instance?.Show(_definition, _rectTransform);
     }
 }

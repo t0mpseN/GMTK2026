@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5048bfa059c9672478668705cc3a19bf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _musicSource: {instanceID: 0}
+  - _sfxSource: {instanceID: 0}
+  - _menuMusic: {fileID: 8300000, guid: d72204cb8992632459c8bfe3fa7e1bff, type: 3}
+  - _gameMusic: {fileID: 8300000, guid: d72204cb8992632459c8bfe3fa7e1bff, type: 3}
+  - _attackClip: {fileID: 8300000, guid: 52728e65f88c6ef4ab78909c61785ff0, type: 3}
+  - _hitClip: {instanceID: 0}
+  - _foodKilledClip: {fileID: 8300000, guid: ffe57f5dd8e5204488ce2e879a468354, type: 3}
+  - _foodEatenClip: {fileID: 8300000, guid: 6b2a4fbcf695bcd478bb91ca818d6c1b, type: 3}
+  - _purchaseClip: {fileID: 8300000, guid: d581bb528e26a4e4ea82b6441245e78d, type: 3}
+  - _deniedClip: {fileID: 8300000, guid: 22fd10ac74e8e564e8c5448b9ccb676c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

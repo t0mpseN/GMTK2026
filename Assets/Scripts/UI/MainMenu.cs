@@ -12,4 +12,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(_gameSceneName);
     }
+
+    public void Start()
+    {
+        AudioManager.Instance?.PlayMusic(AudioManager.Instance.MenuMusic);
+    }
 }

@@ -47,22 +47,24 @@
 	- [x] Food spawn on kill chance
 	- [x] Extra food spawn chance
 - [x] Add healthy foods can be eaten on collision behaviour
+
+## 26/07 - Sunday
 - [x] Add starting food number spawn (healthy foods)
 - [x] Swap "satiety" with "energy" -> junk food don't recover energy on kill
 - [x] Add food spawning progression (start with only healthy foods)
 - [x] Add food sprites
 - [x] Add slash animation
 - [x] Add burnt calories count on upgrades popup
-- [ ] Add wall (limit world area)
+- [x] Add wall (limit world area)
+- [x] Add sounds & music
+- [ ] Add audio controls
+- [ ] Add junk food eaten penalty property
+- [ ] Add eating animations & improve feedback
 - [ ] Add random colors on apples (new prefabs?)
 - [ ] Improve food hitboxes
 - [ ] Add shadows
 - [ ] Add more food types
 - [ ] Polish visuals
-- [ ] Playtesting & bugfixing
-- [ ] Fix tiling
-
-## 26/07 - Sunday
 - [ ] Playtesting & bugfixing
 
 # POST-JAM IDEAS
