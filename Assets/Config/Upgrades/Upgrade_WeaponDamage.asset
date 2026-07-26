@@ -19,17 +19,17 @@ MonoBehaviour:
   - cost: 0
     value: 0
     description: Level 1
-  - cost: 300
+  - cost: 18
     value: 1
     description: Be able to defend yourself from junk food!
-  - cost: 600
+  - cost: 42
     value: 2
     description: Increases your damage
-  - cost: 1000
+  - cost: 68
     value: 3
     description: Increases your damage
-  - cost: 1500
-    value: 4
+  - cost: 120
+    value: 6
     description: Increases your damage
   _requirements:
   - upgrade: 0

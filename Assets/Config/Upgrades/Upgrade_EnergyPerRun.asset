@@ -17,16 +17,16 @@ MonoBehaviour:
   _icon: {fileID: -853151654, guid: 4ee17662a40a4b84c98e11001aba45b0, type: 3}
   _levels:
   - cost: 0
-    value: 10
+    value: 6
     description: Base maximum energy
-  - cost: 300
-    value: 15
+  - cost: 3
+    value: 8
     description: Increases your maximum energy
-  - cost: 600
-    value: 20
+  - cost: 6
+    value: 10
     description: Increases your maximum energy
-  - cost: 1000
-    value: 30
+  - cost: 22
+    value: 12
     description: Increases your maximum energy
   _requirements:
   - upgrade: 0

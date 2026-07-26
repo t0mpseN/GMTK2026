@@ -17,16 +17,16 @@ MonoBehaviour:
   _icon: {fileID: 6948869885444343264, guid: 4ee17662a40a4b84c98e11001aba45b0, type: 3}
   _levels:
   - cost: 0
-    value: 1
+    value: 0
     description: Base food spawns per second
-  - cost: 600
+  - cost: 20
+    value: 1
+    description: Increases food spawns per second
+  - cost: 70
     value: 2
     description: Increases food spawns per second
-  - cost: 1000
+  - cost: 100
     value: 3
-    description: Increases food spawns per second
-  - cost: 1000
-    value: 4
     description: Increases food spawns per second
   _requirements:
   - upgrade: 9

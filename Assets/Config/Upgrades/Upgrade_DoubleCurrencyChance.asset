@@ -19,13 +19,13 @@ MonoBehaviour:
   - cost: 0
     value: 0
     description: Base chance to burn double calories
-  - cost: 300
+  - cost: 10
     value: 0.1
     description: Increases the chance to burn double calories
-  - cost: 600
+  - cost: 20
     value: 0.2
     description: Increases the chance to burn double calories
-  - cost: 1000
+  - cost: 40
     value: 0.3
     description: Increases the chance to burn double calories
   _requirements:

@@ -19,14 +19,14 @@ MonoBehaviour:
   - cost: 0
     value: 1
     description: Base burnt calories on eating good food
-  - cost: 200
+  - cost: 7
     value: 2
     description: Increases your burnt calories on eating good food
-  - cost: 600
+  - cost: 20
     value: 3
     description: Increases your burnt calories on eating good food
-  - cost: 1000
-    value: 5
+  - cost: 60
+    value: 4
     description: Increases your burnt calories on eating good food
   _requirements:
   - upgrade: 0

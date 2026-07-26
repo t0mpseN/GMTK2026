@@ -19,13 +19,13 @@ MonoBehaviour:
   - cost: 0
     value: 1.5
     description: Base slash size
-  - cost: 300
+  - cost: 10
     value: 1.7
     description: 'Increases the size of your slashes '
-  - cost: 600
+  - cost: 46
     value: 2
     description: 'Increases the size of your slashes '
-  - cost: 1000
+  - cost: 92
     value: 2.5
     description: 'Increases the size of your slashes '
   _requirements:

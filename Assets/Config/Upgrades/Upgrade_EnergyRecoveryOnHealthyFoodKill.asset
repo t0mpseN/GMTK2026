@@ -19,14 +19,14 @@ MonoBehaviour:
   - cost: 0
     value: 0
     description: Base energy recovery when eating good food
-  - cost: 300
-    value: 1
+  - cost: 6
+    value: 0.1
     description: Recover some energy when eating good food
-  - cost: 600
-    value: 2
+  - cost: 36
+    value: 0.2
     description: Recover some energy when eating good food
-  - cost: 1000
-    value: 3
+  - cost: 64
+    value: 0.3
     description: Recover some energy when eating good food
   _requirements:
   - upgrade: 5

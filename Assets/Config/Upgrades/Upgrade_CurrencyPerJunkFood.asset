@@ -19,14 +19,14 @@ MonoBehaviour:
   - cost: 0
     value: 1
     description: Base burnt calories on killing bad food
-  - cost: 300
+  - cost: 20
     value: 2
     description: Increases your burnt calories on killing bad food
-  - cost: 600
+  - cost: 40
     value: 3
     description: Increases your burnt calories on killing bad food
-  - cost: 1000
-    value: 5
+  - cost: 80
+    value: 4
     description: Increases your burnt calories on killing bad food
   _requirements:
   - upgrade: 7
